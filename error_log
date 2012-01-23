@@ -1,0 +1,195 @@
+[21-Sep-2011 12:03:16] PHP Parse error:  syntax error, unexpected T_PAAMAYIM_NEKUDOTAYIM in /home7/toponimo/public_html/toponimo/protected/views/place/_view.php on line 8
+[21-Sep-2011 12:03:27] PHP Parse error:  syntax error, unexpected T_PAAMAYIM_NEKUDOTAYIM in /home7/toponimo/public_html/toponimo/protected/views/place/_view.php on line 8
+[21-Sep-2011 12:20:04] PHP Fatal error:  Call to undefined method EGmap3Marker::latLng() in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 63
+[21-Sep-2011 12:21:21] PHP Fatal error:  Call to a member function centerOnMap() on a non-object in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 45
+[21-Sep-2011 12:21:25] PHP Fatal error:  Call to a member function centerOnMap() on a non-object in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 45
+[21-Sep-2011 12:21:31] PHP Fatal error:  Call to a member function centerOnMap() on a non-object in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 45
+[21-Sep-2011 12:23:54] PHP Fatal error:  Call to a member function centerOnMap() on a non-object in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 45
+[21-Sep-2011 12:23:56] PHP Fatal error:  Call to a member function centerOnMap() on a non-object in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 45
+[21-Sep-2011 12:24:10] PHP Fatal error:  Call to a member function centerOnMap() on a non-object in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 45
+[21-Sep-2011 12:24:13] PHP Fatal error:  Call to a member function centerOnMap() on a non-object in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 45
+[21-Sep-2011 12:24:16] PHP Fatal error:  Call to a member function centerOnMap() on a non-object in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 45
+[21-Sep-2011 14:03:52] PHP Parse error:  syntax error, unexpected ',' in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 32
+[21-Sep-2011 14:27:26] PHP Parse error:  syntax error, unexpected T_STRING in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 57
+[21-Sep-2011 14:27:42] PHP Parse error:  syntax error, unexpected T_STRING in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 57
+[21-Sep-2011 14:27:46] PHP Parse error:  syntax error, unexpected T_STRING in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 57
+[21-Sep-2011 14:27:50] PHP Parse error:  syntax error, unexpected T_STRING in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 57
+[21-Sep-2011 14:46:20] PHP Parse error:  syntax error, unexpected $end in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 85
+[21-Sep-2011 14:55:06] PHP Parse error:  syntax error, unexpected $end in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 85
+[21-Sep-2011 14:58:57] PHP Parse error:  syntax error, unexpected $end in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 85
+[21-Sep-2011 14:59:01] PHP Parse error:  syntax error, unexpected $end in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 85
+[21-Sep-2011 14:59:14] PHP Parse error:  syntax error, unexpected $end in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 85
+[21-Sep-2011 14:59:17] PHP Parse error:  syntax error, unexpected $end in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 85
+[21-Sep-2011 14:59:19] PHP Parse error:  syntax error, unexpected $end in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 85
+[21-Sep-2011 14:59:50] PHP Parse error:  syntax error, unexpected $end in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 85
+[21-Sep-2011 14:59:51] PHP Parse error:  syntax error, unexpected ',' in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 45
+[21-Sep-2011 14:59:54] PHP Parse error:  syntax error, unexpected ',' in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 45
+[21-Sep-2011 15:00:06] PHP Parse error:  syntax error, unexpected ',' in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 45
+[21-Sep-2011 15:13:06] PHP Parse error:  syntax error, unexpected '<' in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 54
+[21-Sep-2011 15:13:25] PHP Parse error:  syntax error, unexpected '<' in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 54
+[18-Oct-2011 14:33:46] PHP Parse error:  syntax error, unexpected '<' in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 18
+[18-Oct-2011 14:33:48] PHP Parse error:  syntax error, unexpected '<' in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 18
+[18-Oct-2011 14:33:54] PHP Parse error:  syntax error, unexpected '<' in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 18
+[18-Oct-2011 14:33:56] PHP Parse error:  syntax error, unexpected '<' in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 18
+[18-Oct-2011 14:34:01] PHP Parse error:  syntax error, unexpected '<' in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 18
+[18-Oct-2011 14:34:04] PHP Parse error:  syntax error, unexpected '<' in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 18
+[18-Oct-2011 14:50:27] PHP Fatal error:  Call to undefined function  http_get() in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 85
+[18-Oct-2011 14:50:29] PHP Fatal error:  Call to undefined function  http_get() in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 85
+[18-Oct-2011 14:50:32] PHP Fatal error:  Call to undefined function  http_get() in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 85
+[18-Oct-2011 14:51:32] PHP Fatal error:  Call to undefined function  http_get() in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 85
+[18-Oct-2011 14:51:36] PHP Fatal error:  Call to undefined function  http_get() in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 85
+[18-Oct-2011 14:52:23] PHP Fatal error:  Call to undefined function  http_get() in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 85
+[18-Oct-2011 14:52:25] PHP Fatal error:  Call to undefined function  http_get() in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 85
+[18-Oct-2011 14:52:30] PHP Fatal error:  Call to undefined function  http_get() in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 85
+[18-Oct-2011 14:53:08] PHP Fatal error:  Call to undefined function  http_get() in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 85
+[18-Oct-2011 14:53:10] PHP Fatal error:  Call to undefined function  http_get() in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 85
+[18-Oct-2011 17:35:14] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 13966745 bytes) in /home7/toponimo/yii/framework/web/widgets/COutputProcessor.php on line 44
+[18-Oct-2011 17:35:17] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 13966745 bytes) in /home7/toponimo/yii/framework/web/widgets/COutputProcessor.php on line 44
+[18-Oct-2011 17:39:46] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 13966745 bytes) in /home7/toponimo/yii/framework/web/widgets/COutputProcessor.php on line 44
+[19-Oct-2011 11:51:17] PHP Parse error:  syntax error, unexpected T_STRING in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 27
+[19-Oct-2011 11:51:19] PHP Parse error:  syntax error, unexpected T_STRING in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 27
+[19-Oct-2011 13:03:55] PHP Parse error:  syntax error, unexpected '<' in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 26
+[19-Oct-2011 13:03:58] PHP Parse error:  syntax error, unexpected '<' in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 26
+[19-Oct-2011 16:37:14] PHP Parse error:  syntax error, unexpected '}' in /home7/toponimo/public_html/toponimo/protected/models/Type.php on line 93
+[19-Oct-2011 16:42:58] PHP Parse error:  syntax error, unexpected '}' in /home7/toponimo/public_html/toponimo/protected/models/Type.php on line 93
+[19-Oct-2011 16:43:01] PHP Parse error:  syntax error, unexpected '}' in /home7/toponimo/public_html/toponimo/protected/models/Type.php on line 93
+[19-Oct-2011 16:43:34] PHP Parse error:  syntax error, unexpected '}' in /home7/toponimo/public_html/toponimo/protected/models/Type.php on line 93
+[19-Oct-2011 16:43:38] PHP Parse error:  syntax error, unexpected '}' in /home7/toponimo/public_html/toponimo/protected/models/Type.php on line 93
+[19-Oct-2011 16:44:01] PHP Parse error:  syntax error, unexpected '}' in /home7/toponimo/public_html/toponimo/protected/models/Type.php on line 93
+[19-Oct-2011 16:44:02] PHP Parse error:  syntax error, unexpected '}' in /home7/toponimo/public_html/toponimo/protected/models/Type.php on line 93
+[19-Oct-2011 18:05:44] PHP Fatal error:  Call to a member function getDbCriteria() on a non-object in /home7/toponimo/yii/framework/web/CActiveDataProvider.php on line 173
+[19-Oct-2011 18:05:48] PHP Fatal error:  Call to a member function getDbCriteria() on a non-object in /home7/toponimo/yii/framework/web/CActiveDataProvider.php on line 173
+[19-Oct-2011 18:06:05] PHP Fatal error:  Call to a member function getDbCriteria() on a non-object in /home7/toponimo/yii/framework/web/CActiveDataProvider.php on line 173
+[31-Oct-2011 14:46:26] PHP Fatal error:  Call to a member function getSchema() on a non-object in /home7/toponimo/yii/framework/db/ar/CActiveRecord.php on line 2275
+[31-Oct-2011 14:51:10] PHP Fatal error:  Call to a member function getSchema() on a non-object in /home7/toponimo/yii/framework/db/ar/CActiveRecord.php on line 2275
+[31-Oct-2011 14:51:13] PHP Fatal error:  Call to a member function getSchema() on a non-object in /home7/toponimo/yii/framework/db/ar/CActiveRecord.php on line 2275
+[31-Oct-2011 15:08:10] PHP Fatal error:  Call to a member function getData() on a non-object in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 70
+[31-Oct-2011 15:08:13] PHP Fatal error:  Call to a member function getData() on a non-object in /home7/toponimo/public_html/toponimo/protected/views/place/view.php on line 70
+[07-Nov-2011 10:53:50] PHP Fatal error:  Call to a member function isAttributeRequired() on a non-object in /home7/toponimo/yii/framework/web/helpers/CHtml.php on line 1179
+[07-Nov-2011 10:53:53] PHP Fatal error:  Call to a member function isAttributeRequired() on a non-object in /home7/toponimo/yii/framework/web/helpers/CHtml.php on line 1179
+[07-Nov-2011 10:54:12] PHP Fatal error:  Call to a member function isAttributeRequired() on a non-object in /home7/toponimo/yii/framework/web/helpers/CHtml.php on line 1179
+[07-Nov-2011 10:54:15] PHP Fatal error:  Call to a member function isAttributeRequired() on a non-object in /home7/toponimo/yii/framework/web/helpers/CHtml.php on line 1179
+[07-Nov-2011 10:59:31] PHP Fatal error:  Call to a member function t() on a non-object in /home7/toponimo/public_html/toponimo/protected/views/layouts/main.php on line 35
+[07-Nov-2011 10:59:34] PHP Fatal error:  Call to a member function t() on a non-object in /home7/toponimo/public_html/toponimo/protected/views/layouts/main.php on line 35
+[07-Nov-2011 10:59:42] PHP Fatal error:  Call to a member function t() on a non-object in /home7/toponimo/public_html/toponimo/protected/views/layouts/main.php on line 35
+[07-Nov-2011 12:08:56] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home7/toponimo/yii/framework/web/helpers/CHtml.php on line 1605
+[07-Nov-2011 12:08:59] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home7/toponimo/yii/framework/web/helpers/CHtml.php on line 1605
+[07-Nov-2011 12:11:58] PHP Parse error:  syntax error, unexpected T_OBJECT_OPERATOR, expecting ',' or ';' in /home7/toponimo/public_html/toponimo/protected/views/site/index.php on line 15
+[07-Nov-2011 12:12:00] PHP Parse error:  syntax error, unexpected T_OBJECT_OPERATOR, expecting ',' or ';' in /home7/toponimo/public_html/toponimo/protected/views/site/index.php on line 15
+[07-Nov-2011 12:12:12] PHP Parse error:  syntax error, unexpected T_OBJECT_OPERATOR, expecting ',' or ';' in /home7/toponimo/public_html/toponimo/protected/views/site/index.php on line 15
+[07-Nov-2011 12:14:46] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home7/toponimo/yii/framework/web/helpers/CHtml.php on line 1605
+[07-Nov-2011 12:15:52] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home7/toponimo/yii/framework/web/helpers/CHtml.php on line 1605
+[07-Nov-2011 12:17:47] PHP Fatal error:  Call to a member function isAttributeRequired() on a non-object in /home7/toponimo/yii/framework/web/helpers/CHtml.php on line 1179
+[07-Nov-2011 12:17:49] PHP Fatal error:  Call to a member function isAttributeRequired() on a non-object in /home7/toponimo/yii/framework/web/helpers/CHtml.php on line 1179
+[07-Nov-2011 12:20:42] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home7/toponimo/yii/framework/web/helpers/CHtml.php on line 1605
+[07-Nov-2011 12:27:36] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home7/toponimo/yii/framework/web/helpers/CHtml.php on line 1605
+[07-Nov-2011 12:27:40] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home7/toponimo/yii/framework/web/helpers/CHtml.php on line 1605
+[07-Nov-2011 12:27:49] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home7/toponimo/yii/framework/web/helpers/CHtml.php on line 1605
+[07-Nov-2011 12:28:20] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home7/toponimo/yii/framework/web/helpers/CHtml.php on line 1605
+[07-Nov-2011 12:28:22] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home7/toponimo/yii/framework/web/helpers/CHtml.php on line 1605
+[07-Nov-2011 12:28:56] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home7/toponimo/yii/framework/web/helpers/CHtml.php on line 1605
+[07-Nov-2011 12:43:28] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home7/toponimo/yii/framework/web/helpers/CHtml.php on line 1605
+[07-Nov-2011 14:21:50] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home7/toponimo/yii/framework/web/helpers/CHtml.php on line 1605
+[07-Nov-2011 14:34:20] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home7/toponimo/yii/framework/web/helpers/CHtml.php on line 1605
+[07-Nov-2011 17:01:54] PHP Fatal error:  Call to undefined function  sendresponse() in /home7/toponimo/public_html/toponimo/protected/controllers/AuthController.php on line 16
+[07-Nov-2011 17:01:58] PHP Fatal error:  Call to undefined function  sendresponse() in /home7/toponimo/public_html/toponimo/protected/controllers/AuthController.php on line 16
+[07-Nov-2011 17:02:31] PHP Fatal error:  Call to undefined function  sendresponse() in /home7/toponimo/public_html/toponimo/protected/controllers/AuthController.php on line 16
+[07-Nov-2011 17:02:34] PHP Fatal error:  Call to undefined function  sendresponse() in /home7/toponimo/public_html/toponimo/protected/controllers/AuthController.php on line 16
+[08-Nov-2011 06:14:54] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home7/toponimo/yii/framework/web/helpers/CHtml.php on line 1605
+[09-Nov-2011 22:30:19] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home7/toponimo/yii/framework/web/helpers/CHtml.php on line 1605
+[24-Nov-2011 19:01:00] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home7/toponimo/yii/framework/web/helpers/CHtml.php on line 1605
+[28-Nov-2011 05:38:52] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home7/toponimo/yii/framework/web/helpers/CHtml.php on line 1605
+[07-Dec-2011 21:04:35] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home7/toponimo/yii/framework/web/helpers/CHtml.php on line 1605
+[09-Dec-2011 16:21:26] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home7/toponimo/yii/framework/web/helpers/CHtml.php on line 1605
+[10-Dec-2011 01:19:33] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home7/toponimo/yii/framework/web/helpers/CHtml.php on line 1605
+[10-Dec-2011 06:58:03] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home7/toponimo/yii/framework/web/helpers/CHtml.php on line 1605
+[10-Dec-2011 13:27:48] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home7/toponimo/yii/framework/web/helpers/CHtml.php on line 1605
+[10-Dec-2011 19:48:03] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home7/toponimo/yii/framework/web/helpers/CHtml.php on line 1605
+[10-Dec-2011 21:46:11] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home7/toponimo/yii/framework/web/helpers/CHtml.php on line 1605
+[11-Dec-2011 10:41:07] PHP Fatal error:  Call to a member function getErrors() on a non-object in /home7/toponimo/yii/framework/web/helpers/CHtml.php on line 1605
+[03-Jan-2012 06:05:26] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home7/toponimo/public_html/toponimo/protected/config/main.php on line 100
+[03-Jan-2012 06:05:37] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home7/toponimo/public_html/toponimo/protected/config/main.php on line 100
+[03-Jan-2012 16:04:14] PHP Parse error:  syntax error, unexpected '[' in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 86
+[03-Jan-2012 16:04:39] PHP Parse error:  syntax error, unexpected '[' in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 86
+[03-Jan-2012 16:04:40] PHP Parse error:  syntax error, unexpected '[' in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 86
+[03-Jan-2012 16:05:08] PHP Parse error:  syntax error, unexpected '[' in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 86
+[03-Jan-2012 18:49:40] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 75
+[03-Jan-2012 18:51:18] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 71
+[03-Jan-2012 18:51:38] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 70
+[03-Jan-2012 18:51:48] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 70
+[03-Jan-2012 18:54:44] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 69
+[03-Jan-2012 18:54:47] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 69
+[03-Jan-2012 18:55:51] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 76
+[03-Jan-2012 18:55:54] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 76
+[03-Jan-2012 18:57:37] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 76
+[03-Jan-2012 18:57:56] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 76
+[03-Jan-2012 18:59:11] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 76
+[03-Jan-2012 18:59:33] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 76
+[03-Jan-2012 18:59:37] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 76
+[03-Jan-2012 18:59:51] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 76
+[03-Jan-2012 19:01:25] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 76
+[03-Jan-2012 19:01:43] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 76
+[03-Jan-2012 19:02:54] PHP Parse error:  syntax error, unexpected '}' in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 102
+[03-Jan-2012 19:05:42] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 76
+[03-Jan-2012 19:06:00] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 76
+[03-Jan-2012 19:06:55] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 76
+[03-Jan-2012 19:15:48] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 71
+[03-Jan-2012 19:16:07] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 71
+[03-Jan-2012 19:16:18] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 71
+[03-Jan-2012 19:16:22] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 71
+[03-Jan-2012 19:20:43] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 71
+[03-Jan-2012 19:20:46] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 71
+[03-Jan-2012 19:21:09] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 71
+[08-Jan-2012 13:19:50] PHP Parse error:  syntax error, unexpected T_STRING in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 14
+[08-Jan-2012 13:19:53] PHP Parse error:  syntax error, unexpected T_STRING in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 14
+[09-Jan-2012 04:14:46] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 71 bytes) in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 26
+[09-Jan-2012 04:15:00] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 71 bytes) in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 26
+[09-Jan-2012 04:15:15] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 71 bytes) in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 26
+[09-Jan-2012 04:16:13] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 71 bytes) in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 26
+[09-Jan-2012 04:16:35] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 71 bytes) in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 26
+[09-Jan-2012 04:18:59] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 71 bytes) in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 26
+[09-Jan-2012 04:19:32] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 71 bytes) in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 26
+[09-Jan-2012 04:19:35] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 71 bytes) in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 26
+[09-Jan-2012 04:20:27] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 71 bytes) in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 26
+[09-Jan-2012 04:22:17] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 71 bytes) in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 27
+[09-Jan-2012 04:29:54] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 71 bytes) in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 30
+[09-Jan-2012 04:58:00] PHP Fatal error:  Cannot use object of type CDbCommand as array in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 35
+[09-Jan-2012 04:58:03] PHP Fatal error:  Cannot use object of type CDbCommand as array in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 35
+[09-Jan-2012 04:58:45] PHP Fatal error:  Cannot use object of type CDbCommand as array in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 35
+[09-Jan-2012 04:58:47] PHP Fatal error:  Cannot use object of type CDbCommand as array in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 35
+[09-Jan-2012 08:12:02] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 40
+[09-Jan-2012 08:12:05] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 40
+[09-Jan-2012 08:13:32] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 40
+[09-Jan-2012 08:13:36] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 40
+[09-Jan-2012 09:08:21] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 41
+[09-Jan-2012 09:08:24] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 41
+[09-Jan-2012 09:49:50] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 41
+[09-Jan-2012 09:49:52] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 41
+[09-Jan-2012 09:49:54] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 41
+[09-Jan-2012 10:07:07] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 42
+[09-Jan-2012 10:13:26] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 40
+[09-Jan-2012 10:13:29] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 40
+[09-Jan-2012 10:44:25] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 49
+[09-Jan-2012 10:44:33] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 49
+[09-Jan-2012 10:57:41] PHP Parse error:  syntax error, unexpected T_DEFAULT in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 56
+[09-Jan-2012 10:57:48] PHP Parse error:  syntax error, unexpected T_DEFAULT in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 56
+[09-Jan-2012 10:57:58] PHP Parse error:  syntax error, unexpected T_DEFAULT in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 56
+[09-Jan-2012 14:47:55] PHP Parse error:  syntax error, unexpected ')' in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 53
+[09-Jan-2012 14:47:59] PHP Parse error:  syntax error, unexpected ')' in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 53
+[09-Jan-2012 14:50:16] PHP Parse error:  syntax error, unexpected ')' in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 45
+[09-Jan-2012 14:50:18] PHP Parse error:  syntax error, unexpected ')' in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 45
+[09-Jan-2012 14:50:46] PHP Parse error:  syntax error, unexpected ')' in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 45
+[09-Jan-2012 14:50:50] PHP Parse error:  syntax error, unexpected ')' in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 45
+[09-Jan-2012 14:51:10] PHP Parse error:  syntax error, unexpected ')' in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 45
+[09-Jan-2012 14:53:37] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 46
+[10-Jan-2012 00:21:36] PHP Fatal error:  Call to undefined function  echo_var() in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 40
+[10-Jan-2012 00:21:39] PHP Fatal error:  Call to undefined function  echo_var() in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 40
+[10-Jan-2012 00:22:12] PHP Fatal error:  Call to undefined function  echo_var() in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 40
+[10-Jan-2012 00:43:55] PHP Fatal error:  Call to undefined function  ech() in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 46
+[10-Jan-2012 00:44:05] PHP Fatal error:  Call to undefined function  ech() in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 46
+[10-Jan-2012 00:44:09] PHP Fatal error:  Call to undefined function  ech() in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 46
+[10-Jan-2012 01:15:54] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 72 bytes) in /home7/toponimo/yii/framework/YiiBase.php on line 464
+[10-Jan-2012 01:15:58] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 24 bytes) in /home7/toponimo/yii/framework/YiiBase.php on line 464
+[13-Jan-2012 10:14:11] PHP Fatal error:  Call to undefined function  print_t() in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 188
+[13-Jan-2012 12:20:37] PHP Fatal error:  Function name must be a string in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 114
+[13-Jan-2012 12:29:00] PHP Fatal error:  Function name must be a string in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 114

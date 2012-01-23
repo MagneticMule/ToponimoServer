@@ -1,0 +1,272 @@
+2012/01/22 14:17:25 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4543jk4jh5j4k3j4h5' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `image` (`placeid`, `word`, `wordno`, `synsetno`, `ownerid`, `filepath`, `name`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6).
+in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php (216)
+in /home7/toponimo/public_html/toponimo/index.php (13)
+2012/01/22 14:17:25 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4543jk4jh5j4k3j4h5' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `image` (`placeid`, `word`, `wordno`, `synsetno`, `ownerid`, `filepath`, `name`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6)' in /home7/toponimo/yii/framework/db/CDbCommand.php:336
+Stack trace:
+#0 /home7/toponimo/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /home7/toponimo/yii/framework/db/ar/CActiveRecord.php(781): CActiveRecord->insert(NULL)
+#2 /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php(216): CActiveRecord->save()
+#3 /home7/toponimo/yii/framework/web/actions/CInlineAction.php(50): ApiController->actionCreate()
+#4 /home7/toponimo/yii/framework/web/CController.php(300): CInlineAction->runWithParams(Array)
+#5 /home7/toponimo/yii/framework/web/CController.php(278): CController->runAction(Object(CInlineAction))
+#6 /home7/toponimo/yii/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home7/toponimo/yii/framework/web/CWebApplication.php(277): CController->run('create')
+#8 /home7/toponimo/yii/framework/web/CWebApplication.php(136): CWebApplication->runController('api/create')
+#9 /home7/toponimo/yii/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#10 /home7/toponimo/public_html/toponimo/index.php(13): CApplication->run()
+#11 {main} REQUEST_URI=/toponimo/api/images/
+2012/01/22 14:38:38 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4543jk4jh5j4k3j4h5' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `image` (`placeid`, `word`, `wordno`, `synsetno`, `ownerid`, `filepath`, `name`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6).
+in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php (216)
+in /home7/toponimo/public_html/toponimo/index.php (13)
+2012/01/22 14:38:38 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4543jk4jh5j4k3j4h5' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `image` (`placeid`, `word`, `wordno`, `synsetno`, `ownerid`, `filepath`, `name`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6)' in /home7/toponimo/yii/framework/db/CDbCommand.php:336
+Stack trace:
+#0 /home7/toponimo/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /home7/toponimo/yii/framework/db/ar/CActiveRecord.php(781): CActiveRecord->insert(NULL)
+#2 /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php(216): CActiveRecord->save()
+#3 /home7/toponimo/yii/framework/web/actions/CInlineAction.php(50): ApiController->actionCreate()
+#4 /home7/toponimo/yii/framework/web/CController.php(300): CInlineAction->runWithParams(Array)
+#5 /home7/toponimo/yii/framework/web/CController.php(278): CController->runAction(Object(CInlineAction))
+#6 /home7/toponimo/yii/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home7/toponimo/yii/framework/web/CWebApplication.php(277): CController->run('create')
+#8 /home7/toponimo/yii/framework/web/CWebApplication.php(136): CWebApplication->runController('api/create')
+#9 /home7/toponimo/yii/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#10 /home7/toponimo/public_html/toponimo/index.php(13): CApplication->run()
+#11 {main} REQUEST_URI=/toponimo/api/images/
+2012/01/22 14:43:23 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4543jk4jh5j4k3j4h5' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `image` (`placeid`, `word`, `wordno`, `synsetno`, `ownerid`, `filepath`, `name`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6).
+in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php (216)
+in /home7/toponimo/public_html/toponimo/index.php (13)
+2012/01/22 14:43:23 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4543jk4jh5j4k3j4h5' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `image` (`placeid`, `word`, `wordno`, `synsetno`, `ownerid`, `filepath`, `name`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6)' in /home7/toponimo/yii/framework/db/CDbCommand.php:336
+Stack trace:
+#0 /home7/toponimo/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /home7/toponimo/yii/framework/db/ar/CActiveRecord.php(781): CActiveRecord->insert(NULL)
+#2 /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php(216): CActiveRecord->save()
+#3 /home7/toponimo/yii/framework/web/actions/CInlineAction.php(50): ApiController->actionCreate()
+#4 /home7/toponimo/yii/framework/web/CController.php(300): CInlineAction->runWithParams(Array)
+#5 /home7/toponimo/yii/framework/web/CController.php(278): CController->runAction(Object(CInlineAction))
+#6 /home7/toponimo/yii/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home7/toponimo/yii/framework/web/CWebApplication.php(277): CController->run('create')
+#8 /home7/toponimo/yii/framework/web/CWebApplication.php(136): CWebApplication->runController('api/create')
+#9 /home7/toponimo/yii/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#10 /home7/toponimo/public_html/toponimo/index.php(13): CApplication->run()
+#11 {main} REQUEST_URI=/toponimo/api/images/
+2012/01/22 15:35:35 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4543jk4jh5j4k3j4h5' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `image` (`placeid`, `word`, `wordno`, `synsetno`, `ownerid`, `filepath`, `name`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6).
+in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php (215)
+in /home7/toponimo/public_html/toponimo/index.php (13)
+2012/01/22 15:35:35 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4543jk4jh5j4k3j4h5' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `image` (`placeid`, `word`, `wordno`, `synsetno`, `ownerid`, `filepath`, `name`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6)' in /home7/toponimo/yii/framework/db/CDbCommand.php:336
+Stack trace:
+#0 /home7/toponimo/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /home7/toponimo/yii/framework/db/ar/CActiveRecord.php(781): CActiveRecord->insert(NULL)
+#2 /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php(215): CActiveRecord->save()
+#3 /home7/toponimo/yii/framework/web/actions/CInlineAction.php(50): ApiController->actionCreate()
+#4 /home7/toponimo/yii/framework/web/CController.php(300): CInlineAction->runWithParams(Array)
+#5 /home7/toponimo/yii/framework/web/CController.php(278): CController->runAction(Object(CInlineAction))
+#6 /home7/toponimo/yii/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home7/toponimo/yii/framework/web/CWebApplication.php(277): CController->run('create')
+#8 /home7/toponimo/yii/framework/web/CWebApplication.php(136): CWebApplication->runController('api/create')
+#9 /home7/toponimo/yii/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#10 /home7/toponimo/public_html/toponimo/index.php(13): CApplication->run()
+#11 {main} REQUEST_URI=/toponimo/api/images/
+2012/01/22 15:45:13 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4543jk4jh5j4k3j4h5' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `image` (`placeid`, `word`, `wordno`, `synsetno`, `ownerid`, `filepath`, `name`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6).
+in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php (215)
+in /home7/toponimo/public_html/toponimo/index.php (13)
+2012/01/22 15:45:13 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4543jk4jh5j4k3j4h5' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `image` (`placeid`, `word`, `wordno`, `synsetno`, `ownerid`, `filepath`, `name`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6)' in /home7/toponimo/yii/framework/db/CDbCommand.php:336
+Stack trace:
+#0 /home7/toponimo/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /home7/toponimo/yii/framework/db/ar/CActiveRecord.php(781): CActiveRecord->insert(NULL)
+#2 /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php(215): CActiveRecord->save()
+#3 /home7/toponimo/yii/framework/web/actions/CInlineAction.php(50): ApiController->actionCreate()
+#4 /home7/toponimo/yii/framework/web/CController.php(300): CInlineAction->runWithParams(Array)
+#5 /home7/toponimo/yii/framework/web/CController.php(278): CController->runAction(Object(CInlineAction))
+#6 /home7/toponimo/yii/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home7/toponimo/yii/framework/web/CWebApplication.php(277): CController->run('create')
+#8 /home7/toponimo/yii/framework/web/CWebApplication.php(136): CWebApplication->runController('api/create')
+#9 /home7/toponimo/yii/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#10 /home7/toponimo/public_html/toponimo/index.php(13): CApplication->run()
+#11 {main} REQUEST_URI=/toponimo/api/images/
+2012/01/22 16:19:24 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4543jk4jh5j4k3j4h5' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `image` (`placeid`, `word`, `wordno`, `synsetno`, `ownerid`, `filepath`, `name`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6).
+in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php (215)
+in /home7/toponimo/public_html/toponimo/index.php (13)
+2012/01/22 16:19:24 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4543jk4jh5j4k3j4h5' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `image` (`placeid`, `word`, `wordno`, `synsetno`, `ownerid`, `filepath`, `name`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6)' in /home7/toponimo/yii/framework/db/CDbCommand.php:336
+Stack trace:
+#0 /home7/toponimo/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /home7/toponimo/yii/framework/db/ar/CActiveRecord.php(781): CActiveRecord->insert(NULL)
+#2 /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php(215): CActiveRecord->save()
+#3 /home7/toponimo/yii/framework/web/actions/CInlineAction.php(50): ApiController->actionCreate()
+#4 /home7/toponimo/yii/framework/web/CController.php(300): CInlineAction->runWithParams(Array)
+#5 /home7/toponimo/yii/framework/web/CController.php(278): CController->runAction(Object(CInlineAction))
+#6 /home7/toponimo/yii/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home7/toponimo/yii/framework/web/CWebApplication.php(277): CController->run('create')
+#8 /home7/toponimo/yii/framework/web/CWebApplication.php(136): CWebApplication->runController('api/create')
+#9 /home7/toponimo/yii/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#10 /home7/toponimo/public_html/toponimo/index.php(13): CApplication->run()
+#11 {main} REQUEST_URI=/toponimo/api/images/
+2012/01/22 16:24:06 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4543jk4jh5j4k3j4h5' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `image` (`placeid`, `word`, `wordno`, `synsetno`, `ownerid`, `filepath`, `name`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6).
+in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php (215)
+in /home7/toponimo/public_html/toponimo/index.php (13)
+2012/01/22 16:24:06 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4543jk4jh5j4k3j4h5' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `image` (`placeid`, `word`, `wordno`, `synsetno`, `ownerid`, `filepath`, `name`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6)' in /home7/toponimo/yii/framework/db/CDbCommand.php:336
+Stack trace:
+#0 /home7/toponimo/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /home7/toponimo/yii/framework/db/ar/CActiveRecord.php(781): CActiveRecord->insert(NULL)
+#2 /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php(215): CActiveRecord->save()
+#3 /home7/toponimo/yii/framework/web/actions/CInlineAction.php(50): ApiController->actionCreate()
+#4 /home7/toponimo/yii/framework/web/CController.php(300): CInlineAction->runWithParams(Array)
+#5 /home7/toponimo/yii/framework/web/CController.php(278): CController->runAction(Object(CInlineAction))
+#6 /home7/toponimo/yii/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home7/toponimo/yii/framework/web/CWebApplication.php(277): CController->run('create')
+#8 /home7/toponimo/yii/framework/web/CWebApplication.php(136): CWebApplication->runController('api/create')
+#9 /home7/toponimo/yii/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#10 /home7/toponimo/public_html/toponimo/index.php(13): CApplication->run()
+#11 {main} REQUEST_URI=/toponimo/api/images/
+2012/01/22 16:26:45 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4543jk4jh5j4k3j4h5' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `image` (`placeid`, `word`, `wordno`, `synsetno`, `ownerid`, `filepath`, `name`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6).
+in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php (215)
+in /home7/toponimo/public_html/toponimo/index.php (13)
+2012/01/22 16:26:45 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4543jk4jh5j4k3j4h5' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `image` (`placeid`, `word`, `wordno`, `synsetno`, `ownerid`, `filepath`, `name`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6)' in /home7/toponimo/yii/framework/db/CDbCommand.php:336
+Stack trace:
+#0 /home7/toponimo/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /home7/toponimo/yii/framework/db/ar/CActiveRecord.php(781): CActiveRecord->insert(NULL)
+#2 /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php(215): CActiveRecord->save()
+#3 /home7/toponimo/yii/framework/web/actions/CInlineAction.php(50): ApiController->actionCreate()
+#4 /home7/toponimo/yii/framework/web/CController.php(300): CInlineAction->runWithParams(Array)
+#5 /home7/toponimo/yii/framework/web/CController.php(278): CController->runAction(Object(CInlineAction))
+#6 /home7/toponimo/yii/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home7/toponimo/yii/framework/web/CWebApplication.php(277): CController->run('create')
+#8 /home7/toponimo/yii/framework/web/CWebApplication.php(136): CWebApplication->runController('api/create')
+#9 /home7/toponimo/yii/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#10 /home7/toponimo/public_html/toponimo/index.php(13): CApplication->run()
+#11 {main} REQUEST_URI=/toponimo/api/images/
+2012/01/22 16:31:24 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4543jk4jh5j4k3j4h5' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `image` (`placeid`, `word`, `wordno`, `synsetno`, `ownerid`, `filepath`, `name`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6).
+in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php (215)
+in /home7/toponimo/public_html/toponimo/index.php (13)
+2012/01/22 16:31:24 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4543jk4jh5j4k3j4h5' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `image` (`placeid`, `word`, `wordno`, `synsetno`, `ownerid`, `filepath`, `name`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6)' in /home7/toponimo/yii/framework/db/CDbCommand.php:336
+Stack trace:
+#0 /home7/toponimo/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /home7/toponimo/yii/framework/db/ar/CActiveRecord.php(781): CActiveRecord->insert(NULL)
+#2 /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php(215): CActiveRecord->save()
+#3 /home7/toponimo/yii/framework/web/actions/CInlineAction.php(50): ApiController->actionCreate()
+#4 /home7/toponimo/yii/framework/web/CController.php(300): CInlineAction->runWithParams(Array)
+#5 /home7/toponimo/yii/framework/web/CController.php(278): CController->runAction(Object(CInlineAction))
+#6 /home7/toponimo/yii/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home7/toponimo/yii/framework/web/CWebApplication.php(277): CController->run('create')
+#8 /home7/toponimo/yii/framework/web/CWebApplication.php(136): CWebApplication->runController('api/create')
+#9 /home7/toponimo/yii/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#10 /home7/toponimo/public_html/toponimo/index.php(13): CApplication->run()
+#11 {main} REQUEST_URI=/toponimo/api/images/
+2012/01/22 16:41:19 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4543jk4jh5j4k3j4h5' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `image` (`placeid`, `word`, `wordno`, `synsetno`, `ownerid`, `filepath`, `name`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6).
+in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php (215)
+in /home7/toponimo/public_html/toponimo/index.php (13)
+2012/01/22 16:41:19 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4543jk4jh5j4k3j4h5' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `image` (`placeid`, `word`, `wordno`, `synsetno`, `ownerid`, `filepath`, `name`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6)' in /home7/toponimo/yii/framework/db/CDbCommand.php:336
+Stack trace:
+#0 /home7/toponimo/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /home7/toponimo/yii/framework/db/ar/CActiveRecord.php(781): CActiveRecord->insert(NULL)
+#2 /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php(215): CActiveRecord->save()
+#3 /home7/toponimo/yii/framework/web/actions/CInlineAction.php(50): ApiController->actionCreate()
+#4 /home7/toponimo/yii/framework/web/CController.php(300): CInlineAction->runWithParams(Array)
+#5 /home7/toponimo/yii/framework/web/CController.php(278): CController->runAction(Object(CInlineAction))
+#6 /home7/toponimo/yii/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home7/toponimo/yii/framework/web/CWebApplication.php(277): CController->run('create')
+#8 /home7/toponimo/yii/framework/web/CWebApplication.php(136): CWebApplication->runController('api/create')
+#9 /home7/toponimo/yii/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#10 /home7/toponimo/public_html/toponimo/index.php(13): CApplication->run()
+#11 {main} REQUEST_URI=/toponimo/api/images/
+2012/01/22 16:41:39 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4543jk4jh5j4k3j4h5' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `image` (`placeid`, `word`, `wordno`, `synsetno`, `ownerid`, `filepath`, `name`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6).
+in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php (215)
+in /home7/toponimo/public_html/toponimo/index.php (13)
+2012/01/22 16:41:39 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4543jk4jh5j4k3j4h5' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `image` (`placeid`, `word`, `wordno`, `synsetno`, `ownerid`, `filepath`, `name`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6)' in /home7/toponimo/yii/framework/db/CDbCommand.php:336
+Stack trace:
+#0 /home7/toponimo/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /home7/toponimo/yii/framework/db/ar/CActiveRecord.php(781): CActiveRecord->insert(NULL)
+#2 /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php(215): CActiveRecord->save()
+#3 /home7/toponimo/yii/framework/web/actions/CInlineAction.php(50): ApiController->actionCreate()
+#4 /home7/toponimo/yii/framework/web/CController.php(300): CInlineAction->runWithParams(Array)
+#5 /home7/toponimo/yii/framework/web/CController.php(278): CController->runAction(Object(CInlineAction))
+#6 /home7/toponimo/yii/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home7/toponimo/yii/framework/web/CWebApplication.php(277): CController->run('create')
+#8 /home7/toponimo/yii/framework/web/CWebApplication.php(136): CWebApplication->runController('api/create')
+#9 /home7/toponimo/yii/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#10 /home7/toponimo/public_html/toponimo/index.php(13): CApplication->run()
+#11 {main} REQUEST_URI=/toponimo/api/images/
+2012/01/22 16:41:53 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4543jk4jh5j4k3j4h5' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `image` (`placeid`, `word`, `wordno`, `synsetno`, `ownerid`, `filepath`, `name`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6).
+in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php (215)
+in /home7/toponimo/public_html/toponimo/index.php (13)
+2012/01/22 16:41:53 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4543jk4jh5j4k3j4h5' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `image` (`placeid`, `word`, `wordno`, `synsetno`, `ownerid`, `filepath`, `name`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6)' in /home7/toponimo/yii/framework/db/CDbCommand.php:336
+Stack trace:
+#0 /home7/toponimo/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /home7/toponimo/yii/framework/db/ar/CActiveRecord.php(781): CActiveRecord->insert(NULL)
+#2 /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php(215): CActiveRecord->save()
+#3 /home7/toponimo/yii/framework/web/actions/CInlineAction.php(50): ApiController->actionCreate()
+#4 /home7/toponimo/yii/framework/web/CController.php(300): CInlineAction->runWithParams(Array)
+#5 /home7/toponimo/yii/framework/web/CController.php(278): CController->runAction(Object(CInlineAction))
+#6 /home7/toponimo/yii/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home7/toponimo/yii/framework/web/CWebApplication.php(277): CController->run('create')
+#8 /home7/toponimo/yii/framework/web/CWebApplication.php(136): CWebApplication->runController('api/create')
+#9 /home7/toponimo/yii/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#10 /home7/toponimo/public_html/toponimo/index.php(13): CApplication->run()
+#11 {main} REQUEST_URI=/toponimo/api/images/
+2012/01/22 19:08:18 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4543jk4jh5j4k3j4h5' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `image` (`placeid`, `word`, `wordno`, `synsetno`, `ownerid`, `filepath`, `name`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6).
+in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php (215)
+in /home7/toponimo/public_html/toponimo/index.php (13)
+2012/01/22 19:08:18 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4543jk4jh5j4k3j4h5' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `image` (`placeid`, `word`, `wordno`, `synsetno`, `ownerid`, `filepath`, `name`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6)' in /home7/toponimo/yii/framework/db/CDbCommand.php:336
+Stack trace:
+#0 /home7/toponimo/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /home7/toponimo/yii/framework/db/ar/CActiveRecord.php(781): CActiveRecord->insert(NULL)
+#2 /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php(215): CActiveRecord->save()
+#3 /home7/toponimo/yii/framework/web/actions/CInlineAction.php(50): ApiController->actionCreate()
+#4 /home7/toponimo/yii/framework/web/CController.php(300): CInlineAction->runWithParams(Array)
+#5 /home7/toponimo/yii/framework/web/CController.php(278): CController->runAction(Object(CInlineAction))
+#6 /home7/toponimo/yii/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home7/toponimo/yii/framework/web/CWebApplication.php(277): CController->run('create')
+#8 /home7/toponimo/yii/framework/web/CWebApplication.php(136): CWebApplication->runController('api/create')
+#9 /home7/toponimo/yii/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#10 /home7/toponimo/public_html/toponimo/index.php(13): CApplication->run()
+#11 {main} REQUEST_URI=/toponimo/api/images/
+2012/01/22 19:08:50 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4543jk4jh5j4k3j4h5' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `image` (`placeid`, `word`, `wordno`, `synsetno`, `ownerid`, `filepath`, `name`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6).
+in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php (215)
+in /home7/toponimo/public_html/toponimo/index.php (13)
+2012/01/22 19:08:50 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4543jk4jh5j4k3j4h5' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `image` (`placeid`, `word`, `wordno`, `synsetno`, `ownerid`, `filepath`, `name`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6)' in /home7/toponimo/yii/framework/db/CDbCommand.php:336
+Stack trace:
+#0 /home7/toponimo/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /home7/toponimo/yii/framework/db/ar/CActiveRecord.php(781): CActiveRecord->insert(NULL)
+#2 /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php(215): CActiveRecord->save()
+#3 /home7/toponimo/yii/framework/web/actions/CInlineAction.php(50): ApiController->actionCreate()
+#4 /home7/toponimo/yii/framework/web/CController.php(300): CInlineAction->runWithParams(Array)
+#5 /home7/toponimo/yii/framework/web/CController.php(278): CController->runAction(Object(CInlineAction))
+#6 /home7/toponimo/yii/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home7/toponimo/yii/framework/web/CWebApplication.php(277): CController->run('create')
+#8 /home7/toponimo/yii/framework/web/CWebApplication.php(136): CWebApplication->runController('api/create')
+#9 /home7/toponimo/yii/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#10 /home7/toponimo/public_html/toponimo/index.php(13): CApplication->run()
+#11 {main} REQUEST_URI=/toponimo/api/images/
+2012/01/22 19:14:39 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4543jk4jh5j4k3j4h5' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `image` (`placeid`, `word`, `wordno`, `synsetno`, `ownerid`, `filepath`, `name`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6).
+in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php (215)
+in /home7/toponimo/public_html/toponimo/index.php (13)
+2012/01/22 19:14:39 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4543jk4jh5j4k3j4h5' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `image` (`placeid`, `word`, `wordno`, `synsetno`, `ownerid`, `filepath`, `name`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6)' in /home7/toponimo/yii/framework/db/CDbCommand.php:336
+Stack trace:
+#0 /home7/toponimo/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /home7/toponimo/yii/framework/db/ar/CActiveRecord.php(781): CActiveRecord->insert(NULL)
+#2 /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php(215): CActiveRecord->save()
+#3 /home7/toponimo/yii/framework/web/actions/CInlineAction.php(50): ApiController->actionCreate()
+#4 /home7/toponimo/yii/framework/web/CController.php(300): CInlineAction->runWithParams(Array)
+#5 /home7/toponimo/yii/framework/web/CController.php(278): CController->runAction(Object(CInlineAction))
+#6 /home7/toponimo/yii/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home7/toponimo/yii/framework/web/CWebApplication.php(277): CController->run('create')
+#8 /home7/toponimo/yii/framework/web/CWebApplication.php(136): CWebApplication->runController('api/create')
+#9 /home7/toponimo/yii/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#10 /home7/toponimo/public_html/toponimo/index.php(13): CApplication->run()
+#11 {main} REQUEST_URI=/toponimo/api/images/
+2012/01/23 04:58:05 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4543jk4jh5j4k3j4h5' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `image` (`placeid`, `word`, `wordno`, `synsetno`, `ownerid`, `filepath`, `name`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6).
+in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php (215)
+in /home7/toponimo/public_html/toponimo/index.php (13)
+2012/01/23 04:58:05 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4543jk4jh5j4k3j4h5' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `image` (`placeid`, `word`, `wordno`, `synsetno`, `ownerid`, `filepath`, `name`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6)' in /home7/toponimo/yii/framework/db/CDbCommand.php:336
+Stack trace:
+#0 /home7/toponimo/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /home7/toponimo/yii/framework/db/ar/CActiveRecord.php(781): CActiveRecord->insert(NULL)
+#2 /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php(215): CActiveRecord->save()
+#3 /home7/toponimo/yii/framework/web/actions/CInlineAction.php(50): ApiController->actionCreate()
+#4 /home7/toponimo/yii/framework/web/CController.php(300): CInlineAction->runWithParams(Array)
+#5 /home7/toponimo/yii/framework/web/CController.php(278): CController->runAction(Object(CInlineAction))
+#6 /home7/toponimo/yii/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home7/toponimo/yii/framework/web/CWebApplication.php(277): CController->run('create')
+#8 /home7/toponimo/yii/framework/web/CWebApplication.php(136): CWebApplication->runController('api/create')
+#9 /home7/toponimo/yii/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#10 /home7/toponimo/public_html/toponimo/index.php(13): CApplication->run()
+#11 {main} REQUEST_URI=/toponimo/api/images/
