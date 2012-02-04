@@ -62,8 +62,8 @@ class Image extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'owner' => array(self::BELONGS_TO, 'TblUsers', 'ownerid'),
-			'place' => array(self::BELONGS_TO, 'Place', 'placeid'),
+			//'owner' => array(self::BELONGS_TO, 'TblUsers', 'ownerid'),
+			//'place' => array(self::BELONGS_TO, 'Place', 'placeid'),
 		);
 	}
 

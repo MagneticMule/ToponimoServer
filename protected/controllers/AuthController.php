@@ -7,10 +7,10 @@ class AuthController extends Controller {
     public function actionLogin() {
         $model = new UserLogin;
         if (isset($_POST['UserLogin'])) {
-            // $model->attributes = $_POST['UserLogin'];
-            $model->username = $_POST['username'];
-            $model->password = $_POST['password'];
-            $model->rememberMe = $_POST['rememberme'];
+            $model->attributes = $_POST['UserLogin'];
+           // $model->username = $_POST['username'];
+           // $model->password = $_POST['password'];
+           // $model->rememberMe = $_POST['rememberme'];
 
             if ($model->validate()) {
                 $record = User::model()->findByAttributes(array('username' => "admin"));

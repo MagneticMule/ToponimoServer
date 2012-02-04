@@ -9,6 +9,9 @@ class ApiController extends Controller {
             case 'words':
                 $models = Word::model()->findAll();
                 break;
+            case 'images':
+                $models = Image::model()->findAll();
+                break;
             case 'places':
                 // get list of places and associated data
                 $models = Yii::app()->db->createCommand()->
@@ -57,6 +60,8 @@ class ApiController extends Controller {
                     // add list of predefined words to the array
                     $place[dictionaryword] = $dictionary;
                     $results[] = $place;
+                    $models= $results;
+                    
                 }
                 break;
             default:
@@ -65,12 +70,12 @@ class ApiController extends Controller {
                 exit;
         }
 
-        if (!is_null($results)) {
+        if (!is_null($models)) {
             $rows = array();
             foreach ($models as $model) {
                 $rows[] = $model->attributes;
             }
-            $this->sendResponse(200, CJSON::encode($results), 'application/json');
+            $this->sendResponse(200, CJSON::encode($models), 'application/json');
         } else {
             $this->sendResponse(501, sprintf('Bad model name: %s', $_GET['model']));
         }
@@ -89,6 +94,9 @@ class ApiController extends Controller {
                 break;
             case 'places':
                 $model = Place::model()->findByPk($_GET['id']);
+                break;
+            case 'images': 
+                $model = Image::model()->findByPk($_GET['id']);
                 break;
             default:
                 $this->sendResponse(501, sprintf('Bad view name for model %s', $_GET['model']));
@@ -149,8 +157,11 @@ class ApiController extends Controller {
                 // stores any error codes
                 $usrImageError = $_FILES['userimage']['error'];
 
-                // image save path
+                // literal image save path
                 $imageSavePath = '/home7/toponimo/www/wordimagestore/';
+                
+                // www based save access path
+                $webPath = 'www.toponimo.org/wordimagestore/';
 
                 if (!empty($usrImage)) {
                     if ($usrImageError > 0) {
@@ -170,12 +181,12 @@ class ApiController extends Controller {
                     mkdir($imageSavePath . $usrPlaceId);
                 }
 
-                $imageName = md5(uniqid($usrPlaceId . $ownerId), false);
+                $imageName = md5(uniqid($usrPlaceId . $ownerId), false) . '.jpg';
 
                 $uploadedImage = $imageSavePath
-                        . $usrPlaceId . '/'
-                        . $imageName
-                        . '.jpg';
+                        . $usrPlaceId 
+                        . '/'
+                        . $imageName;
 
                 // check if the file was successfuly uploaded
                 if (is_uploaded_file($usrImageTemp)) {
@@ -183,7 +194,8 @@ class ApiController extends Controller {
                         $this->sendResponse(501, sprintf('Could not move file %s to target location', $uploadedImage));
                         exit;
                     } else { //success
-                        $_POST['postobject']['filepath'] = $imageSavePath . $usrPlaceId;
+                        
+                        $_POST['postobject']['filepath'] = $webPath . $usrPlaceId;
                         $_POST['postobject']['name'] = $imageName;
 
                         $model = new Image;

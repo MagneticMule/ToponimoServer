@@ -50,8 +50,10 @@ return array(
                 'words/<tag:.*?>' => 'word/index',
                 'place/<id:\d+>/<title:.*?>' => 'place/view',
                 'places/<tag:.*?>' => 'place/index',
-                //api
-                
+                'image/<id:\d+>/<title:.*?>' => 'image/view',
+                'images/<tag:.*?>' => 'image/index',
+                     
+                //api             
                 array('auth/login', 'pattern' => 'auth/<model:\w+>', 'verb' => 'POST'),
                 array('api/list', 'pattern' => 'api/<model:\w+>', 'verb' => 'GET'),
                 array('api/view', 'pattern' => 'api/<model:\w+>/<id:\d+>', 'verb' => 'GET'), 
