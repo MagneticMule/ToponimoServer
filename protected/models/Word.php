@@ -99,7 +99,7 @@ class Word extends CActiveRecord {
 
     public function getRawWords($pid) {
         $wordsQuery = Yii::app()->db->createCommand()
-                ->selectDistinct('w.word, w.placeid, w._id, w.userid')->from('word as w')
+                ->selectDistinct('w.word,w._id, w.userid')->from('word as w')
                 ->where('w.placeid =:id', array(':id' => $pid))
                 ->queryAll();
         return $wordsQuery;

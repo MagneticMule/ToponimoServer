@@ -7,7 +7,42 @@ class ApiController extends Controller {
         $results = array();
         switch ($_GET['model']) {
             case 'words':
-                $models = Word::model()->findAll();
+                if (!isset($_GET['pid'])) {
+                    $this->sendResponse(500, sprintf('Bad id name: %s', $_GET['pid']));
+                }
+                
+                $pid = $_GET['pid'];
+
+                // add keys/values from the user word table
+                $wordModel = Word::model();
+                $userWords = $wordModel->getRawWords($pid);
+                $words[user] = $userWords;
+                
+                //get place types
+                   // instantiate the Placetype & WordEnglish models
+                    $typeModel = Type::model();
+                    $wordEnglishModel = Wordenglish::model();
+
+                    $placeTypeModel = Placetype::model();
+                    
+                    $dictionary = array();
+                    $types = $typeModel->getArrayPlaceTypes($pid);
+                    foreach ($types as $type) {
+
+                        // get the ID number of the of the current place type
+                        $placeTypeId = $placeTypeModel->getTypeNumber($type);
+
+                        // get list of words based on the current location ID
+                        $dictionaryWords = $wordEnglishModel->getRawDictionaryWords($placeTypeId);
+
+                        // assign word array to the dictionary array using the place type as a key
+                        $dictionary[$type] = $dictionaryWords;
+                    }
+                    // add list of predefined words to the array
+                    $words[dictionary] = $dictionary;
+                    $results[words] = $words;
+                    $models = $results;
+                
                 break;
             case 'images':
                 $models = Image::model()->findAll();
@@ -35,16 +70,12 @@ class ApiController extends Controller {
                     $types = $typeModel->getArrayPlaceTypes($model[placeid]);
                     $place[type] = $types;
 
-                    // add keys/values from the user word table
-                    $wordModel = Word::model();
-                    $userWords = $wordModel->getArrayWords($model[placeid]);
-                    $place[userword] = $userWords;
 
                     // instantiate the Placetype & WordEnglish models
                     $placeTypeModel = Placetype::model();
                     $wordEnglishModel = Wordenglish::model();
 
-                    // construct the array of 
+
                     $dictionary = array();
                     foreach ($types as $type) {
 
@@ -60,8 +91,7 @@ class ApiController extends Controller {
                     // add list of predefined words to the array
                     $place[dictionaryword] = $dictionary;
                     $results[] = $place;
-                    $models= $results;
-                    
+                    $models = $results;
                 }
                 break;
             default:
@@ -89,13 +119,13 @@ class ApiController extends Controller {
         }
 
         switch ($_GET['model']) {
-            case 'words':
+            case 'word':
                 $model = Word::model()->findByPk($_GET['id']);
                 break;
-            case 'places':
+            case 'place':
                 $model = Place::model()->findByPk($_GET['id']);
                 break;
-            case 'images': 
+            case 'image':
                 $model = Image::model()->findByPk($_GET['id']);
                 break;
             default:
@@ -118,12 +148,11 @@ class ApiController extends Controller {
                 $model = new Word;
                 break;
             case 'images':
-                
+
                 // if the 'postobject' variable isn't set get out of here
                 if (!isset($_POST['postobject'])) {
                     $this->sendResponse(400, 'Error "postobject" not found in POST body');
                 } //else           
-                
                 // the image section of the query
                 $usrImage = $_FILES['userimage'];
 
@@ -159,7 +188,7 @@ class ApiController extends Controller {
 
                 // literal image save path
                 $imageSavePath = '/home7/toponimo/www/wordimagestore/';
-                
+
                 // www based save access path
                 $webPath = 'www.toponimo.org/wordimagestore/';
 
@@ -184,7 +213,7 @@ class ApiController extends Controller {
                 $imageName = md5(uniqid($usrPlaceId . $ownerId), false) . '.jpg';
 
                 $uploadedImage = $imageSavePath
-                        . $usrPlaceId 
+                        . $usrPlaceId
                         . '/'
                         . $imageName;
 
@@ -194,7 +223,6 @@ class ApiController extends Controller {
                         $this->sendResponse(501, sprintf('Could not move file %s to target location', $uploadedImage));
                         exit;
                     } else { //success
-                        
                         $_POST['postobject']['filepath'] = $webPath . $usrPlaceId;
                         $_POST['postobject']['name'] = $imageName;
 

@@ -87,7 +87,7 @@ class Wordenglish extends CActiveRecord {
 
     public function getRawDictionaryWords($id) {
         $wordsQuery = Yii::app()->db->createCommand()
-                ->selectDistinct('w.word, w.placetypeid')->from('wordenglish as w')
+                ->selectDistinct('w.word,w._id')->from('wordenglish as w')
                 ->where('w.placetypeid =:id', array(':id' => $id))
                 ->queryAll();
         return $wordsQuery;
