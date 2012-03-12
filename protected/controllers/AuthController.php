@@ -8,27 +8,38 @@ class AuthController extends Controller {
         $model = new UserLogin;
         if (isset($_POST['UserLogin'])) {
             $model->attributes = $_POST['UserLogin'];
-           // $model->username = $_POST['username'];
-           // $model->password = $_POST['password'];
-           // $model->rememberMe = $_POST['rememberme'];
+            // $model->username = $_POST['username'];
+            // $model->password = $_POST['password'];
+            // $model->rememberMe = $_POST['rememberme'];
 
             if ($model->validate()) {
-                $record = User::model()->findByAttributes(array('username' => "admin"));
+                $record = User::model()->findByAttributes(array('username' => $model->username));
                 $userid = $record->id;
                 $profile = TblProfiles::model()->findByAttributes(array('user_id' => $userid));
                 $userDetails = array(
-                	"status"=> 1,
+                    "status" => 1,
                     "userId" => $userid,
                     "firstName" => $profile->firstname,
                     "lastName" => $profile->lastname,
                 );
-
-                $this->sendResponse(200, (json_encode($userDetails)), "text/html");
+                $this->sendResponse(200, (json_encode($userDetails)), "text/json");
             } else {
-                $this->sendResponse(401, sprintf(array("status"=>2)), "text/html");
+                $userDetails = array(
+                    "status" => 2,
+                    "userId" => "null",
+                    "firstName" => "null",
+                    "lastName" => "null",
+                );
+                $this->sendResponse(401, (json_encode($userDetails)), "text/json");
             }
         } else {
-            $this->sendResponse(400, sprintf(array("status"=>3)), "text/html");
+            $userDetails = array(
+                "status" => 3,
+                "userId" => "null",
+                "firstName" => "null",
+                "lastName" => "null",
+            );
+            $this->sendResponse(400, (json_encode($userDetails)), "text/json");
         }
     }
 
@@ -60,4 +71,5 @@ class AuthController extends Controller {
     }
 
 }
+
 ?>

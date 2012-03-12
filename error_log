@@ -193,3 +193,58 @@
 [13-Jan-2012 10:14:11] PHP Fatal error:  Call to undefined function  print_t() in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 188
 [13-Jan-2012 12:20:37] PHP Fatal error:  Function name must be a string in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 114
 [13-Jan-2012 12:29:00] PHP Fatal error:  Function name must be a string in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 114
+[17-Feb-2012 08:04:26] PHP Parse error:  syntax error, unexpected '*' in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 64
+[17-Feb-2012 08:04:31] PHP Parse error:  syntax error, unexpected '*' in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 64
+[17-Feb-2012 08:04:38] PHP Parse error:  syntax error, unexpected '*' in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 64
+[17-Feb-2012 10:32:24] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 22
+[17-Feb-2012 10:32:27] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 22
+[17-Feb-2012 10:32:28] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 22
+[17-Feb-2012 10:33:10] PHP Fatal error:  Call to a member function getArrayPlaceTypes() on a non-object in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 27
+[17-Feb-2012 10:33:13] PHP Fatal error:  Call to a member function getArrayPlaceTypes() on a non-object in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 27
+[17-Feb-2012 10:33:15] PHP Fatal error:  Call to a member function getArrayPlaceTypes() on a non-object in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 27
+[17-Feb-2012 10:34:13] PHP Fatal error:  Call to a member function getArrayPlaceTypes() on a non-object in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 27
+[17-Feb-2012 10:34:24] PHP Fatal error:  Call to a member function getArrayPlaceTypes() on a non-object in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 27
+[17-Feb-2012 10:38:02] PHP Fatal error:  Call to a member function getArrayPlaceTypes() on a non-object in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 28
+[17-Feb-2012 10:38:13] PHP Fatal error:  Call to a member function getArrayPlaceTypes() on a non-object in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 28
+[17-Feb-2012 10:38:42] PHP Fatal error:  Call to a member function getArrayPlaceTypes() on a non-object in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 28
+[17-Feb-2012 10:39:53] PHP Fatal error:  Call to a member function getArrayPlaceTypes() on a non-object in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 28
+[17-Feb-2012 10:41:19] PHP Fatal error:  Call to a member function getArrayPlaceTypes() on a non-object in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 28
+[27-Feb-2012 19:35:21] PHP Parse error:  syntax error, unexpected '[' in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 146
+[27-Feb-2012 19:35:23] PHP Parse error:  syntax error, unexpected '[' in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 146
+[27-Feb-2012 20:13:00] PHP Fatal error:  Call to a member function getDbCriteria() on a non-object in /home7/toponimo/yii/framework/web/CActiveDataProvider.php on line 173
+[27-Feb-2012 20:13:08] PHP Fatal error:  Call to a member function getDbCriteria() on a non-object in /home7/toponimo/yii/framework/web/CActiveDataProvider.php on line 173
+[27-Feb-2012 20:13:20] PHP Fatal error:  Call to a member function getDbCriteria() on a non-object in /home7/toponimo/yii/framework/web/CActiveDataProvider.php on line 173
+[27-Feb-2012 20:22:48] PHP Parse error:  syntax error, unexpected T_CASE in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 76
+[27-Feb-2012 20:22:50] PHP Parse error:  syntax error, unexpected T_CASE in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 76
+[27-Feb-2012 20:38:05] PHP Fatal error:  Cannot use object of type CActiveDataProvider as array in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 61
+[27-Feb-2012 20:38:08] PHP Fatal error:  Cannot use object of type CActiveDataProvider as array in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 61
+[27-Feb-2012 20:38:13] PHP Fatal error:  Cannot use object of type CActiveDataProvider as array in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 61
+[27-Feb-2012 20:38:14] PHP Fatal error:  Cannot use object of type CActiveDataProvider as array in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 61
+[27-Feb-2012 20:41:16] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/models/WordnetWord.php on line 104
+[27-Feb-2012 20:41:27] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/models/WordnetWord.php on line 104
+[27-Feb-2012 20:44:15] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/models/WordnetWord.php on line 104
+[27-Feb-2012 20:47:57] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/models/WordnetWord.php on line 104
+[27-Feb-2012 20:49:13] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/models/WordnetWord.php on line 106
+[27-Feb-2012 21:14:54] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/models/WordnetSense.php on line 109
+[27-Feb-2012 21:14:57] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/models/WordnetSense.php on line 109
+[27-Feb-2012 21:17:11] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/models/WordnetSense.php on line 109
+[27-Feb-2012 21:17:14] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/models/WordnetSense.php on line 109
+[27-Feb-2012 21:17:27] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/models/WordnetSense.php on line 109
+[27-Feb-2012 21:17:32] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/models/WordnetSense.php on line 109
+[27-Feb-2012 21:19:17] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/models/WordnetSense.php on line 109
+[27-Feb-2012 21:21:41] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/models/WordnetSense.php on line 109
+[27-Feb-2012 21:33:43] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 71
+[27-Feb-2012 21:33:46] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 71
+[27-Feb-2012 22:19:01] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 67
+[27-Feb-2012 22:19:04] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/controllers/ApiController.php on line 67
+[27-Feb-2012 22:44:17] PHP Parse error:  syntax error, unexpected T_FOREACH in /home7/toponimo/public_html/toponimo/protected/models/WordnetSample.php on line 94
+[27-Feb-2012 22:44:20] PHP Parse error:  syntax error, unexpected T_FOREACH in /home7/toponimo/public_html/toponimo/protected/models/WordnetSample.php on line 94
+[27-Feb-2012 22:44:23] PHP Parse error:  syntax error, unexpected T_FOREACH in /home7/toponimo/public_html/toponimo/protected/models/WordnetSample.php on line 94
+[27-Feb-2012 22:51:26] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/models/WordnetSample.php on line 97
+[27-Feb-2012 22:51:28] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/models/WordnetSample.php on line 97
+[27-Feb-2012 22:52:00] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/models/WordnetSample.php on line 97
+[27-Feb-2012 22:52:04] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/models/WordnetSample.php on line 97
+[27-Feb-2012 22:52:15] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/models/WordnetSample.php on line 97
+[27-Feb-2012 22:52:17] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/models/WordnetSample.php on line 97
+[27-Feb-2012 22:52:20] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/models/WordnetSample.php on line 97
+[27-Feb-2012 23:00:42] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/models/WordnetSample.php on line 97

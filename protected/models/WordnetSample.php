@@ -18,7 +18,7 @@ class WordnetSample extends CustomActiveRecord {
      * Returns the static model of the specified AR class.
      * @return WordnetSample the static model class
      */
-    public static function model($className=__CLASS__) {
+    public static function model($className = __CLASS__) {
         return parent::model($className);
     }
 
@@ -81,8 +81,23 @@ class WordnetSample extends CustomActiveRecord {
         $criteria->compare('samp', $this->samp, true);
 
         return new CActiveDataProvider($this, array(
-            'criteria' => $criteria,
-        ));
+                    'criteria' => $criteria,
+                ));
+    }
+
+    public function getRawSample($synsetNo, $sampleNo) {
+        
+        
+        $sampleQuery = Yii::app()->db->createCommand()
+                ->selectDistinct('s.samp')->from('toponimo_wordnet.sample as s')
+                ->where('s.synsetno =:id AND s.sampleno = :sampId', array(':id' => $synsetNo, ':sampId'=>$sampleNo))
+                ->queryAll();
+           
+        foreach($sampleQuery as $s){        
+            $result = $s[samp];
+        }
+        
+        return $result;
     }
 
 }

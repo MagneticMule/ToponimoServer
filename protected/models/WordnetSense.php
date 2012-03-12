@@ -18,7 +18,7 @@ class WordnetSense extends CustomActiveRecord {
      * Returns the static model of the specified AR class.
      * @return WordnetSense the static model class
      */
-    public static function model($className=__CLASS__) {
+    public static function model($className = __CLASS__) {
         return parent::model($className);
     }
 
@@ -79,8 +79,8 @@ class WordnetSense extends CustomActiveRecord {
         $criteria->compare('synsetno', $this->synsetno, true);
         $criteria->compare('tagcnt', $this->tagcnt, true);
         return new CActiveDataProvider($this, array(
-            'criteria' => $criteria,
-        ));
+                    'criteria' => $criteria,
+                ));
     }
 
     public function getSynsetNo($wordno) {
@@ -97,6 +97,20 @@ class WordnetSense extends CustomActiveRecord {
 
     public function primaryKey() {
         return array('wordno', 'synsetno');
+    }
+
+    public function getRawSynsetNo($wordno) {
+        $synsetNo = array();
+        $wordsQuery = Yii::app()->db->createCommand()
+                ->selectDistinct('w.synsetno')->from('toponimo_wordnet.sense as w')
+                ->where('w.wordno =:id', array(':id' => $wordno))
+                ->queryAll();
+  
+        foreach($wordsQuery as $w){
+            $synsetNo[] = $w[synsetno];
+        }
+        
+        return $synsetNo;
     }
 
 }

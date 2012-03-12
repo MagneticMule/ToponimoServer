@@ -47,8 +47,9 @@ return array(
             'caseSensitive' => false,
             'rules' => array(
                 'word/<id:\d+>/<title:.*?>' => 'word/view',
-                'words/<tag:.*?>' => 'word/index',
-              
+                'words/<tag:.*?>' => 'word/index', 
+                'wordnetword/<id:\d+>/<title:.*?>' => 'wordnetword/view',
+                'wordnetwords/<tag:.*?>' => 'wordnetword/index',  
                 'place/<id:\d+>/<title:.*?>' => 'place/view',
                 'places/<tag:.*?>' => 'place/index',
                 'image/<id:\d+>/<title:.*?>' => 'image/view',

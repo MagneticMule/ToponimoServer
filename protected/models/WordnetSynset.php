@@ -18,7 +18,7 @@ class WordnetSynset extends CustomActiveRecord {
      * Returns the static model of the specified AR class.
      * @return WordnetSynset the static model class
      */
-    public static function model($className=__CLASS__) {
+    public static function model($className = __CLASS__) {
         return parent::model($className);
     }
 
@@ -82,10 +82,11 @@ class WordnetSynset extends CustomActiveRecord {
         $criteria->compare('lexno', $this->lexno, true);
 
         return new CActiveDataProvider($this, array(
-            'criteria' => $criteria,
-        ));
+                    'criteria' => $criteria,
+                ));
     }
-        public function getDefinition($synsetno) {
+
+    public function getDefinition($synsetno) {
         // returns the id number of the word from the word table
         // This allows for easy integration in to Yii widgest
         $criteria = new CDbCriteria();
@@ -95,6 +96,27 @@ class WordnetSynset extends CustomActiveRecord {
         $this->getDbCriteria()->mergeWith($criteria);
         return $this;
         //$vars = Type::model()->findAll($criteria);
+    }
+
+    public function getRawDefinition($synsetNo) {
+        $definitions = array();
+        $definitionQuery = Yii::app()->db->createCommand()
+                ->selectDistinct('s.definition, s.lexno')->from('toponimo_wordnet.synset as s')
+                ->where('s.synsetno =:id', array(':id' => $synsetNo))
+                ->queryAll();
+        
+         
+
+        foreach ($definitionQuery as $d) {
+            $sampleNo = 0;
+            $definitions[definitions] = $d[definition];
+            $definitions[lex] = WordnetLexname::model()->getRawLexname($d[lexno]);
+            $definitions[synsetno] = $synsetNo;
+            $definitions[sample] = WordnetSample::model()->getRawSample($synsetNo, $sampleNo);
+            $sampleNo ++;
+        }
+
+        return $definitions;
     }
 
 }

@@ -17,7 +17,7 @@ class WordnetWord extends CustomActiveRecord {
      * Returns the static model of the specified AR class.
      * @return WordnetWord the static model class
      */
-    public static function model($className=__CLASS__) {
+    public static function model($className = __CLASS__) {
         return parent::model($className);
     }
 
@@ -78,8 +78,8 @@ class WordnetWord extends CustomActiveRecord {
         $criteria->compare('lemma', $this->lemma, true);
 
         return new CActiveDataProvider($this, array(
-            'criteria' => $criteria,
-        ));
+                    'criteria' => $criteria,
+                ));
     }
 
     public function getWordNumber($word) {
@@ -94,6 +94,19 @@ class WordnetWord extends CustomActiveRecord {
         //$vars = Type::model()->findAll($criteria);
     }
 
+    public function getRawWordNumber($word) {
 
+        $wordsQuery = Yii::app()->db->createCommand()
+                ->selectDistinct('w.wordno')->from('toponimo_wordnet.word as w')
+                ->where('w.lemma =:id', array(':id' => $word))
+                ->queryAll();
+
+        foreach ($wordsQuery as $w) {
+            $result = $w[wordno];
+        }
+
+
+        return $result;
+    }
 
 }

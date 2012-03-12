@@ -10,43 +10,62 @@ class ApiController extends Controller {
                 if (!isset($_GET['pid'])) {
                     $this->sendResponse(500, sprintf('Bad id name: %s', $_GET['pid']));
                 }
-                
+
                 $pid = $_GET['pid'];
 
                 // add keys/values from the user word table
                 $wordModel = Word::model();
                 $userWords = $wordModel->getRawWords($pid);
-                $words[user] = $userWords;
-                
-                //get place types
-                   // instantiate the Placetype & WordEnglish models
-                    $typeModel = Type::model();
-                    $wordEnglishModel = Wordenglish::model();
+                $words[userwords] = $userWords;
 
-                    $placeTypeModel = Placetype::model();
-                    
-                    $dictionary = array();
-                    $types = $typeModel->getArrayPlaceTypes($pid);
-                    foreach ($types as $type) {
+                // get place types
+                // instantiate the Placetype & WordEnglish models
+                $typeModel = Type::model();
+                $wordEnglishModel = Wordenglish::model();
+                $placeTypeModel = Placetype::model();
 
-                        // get the ID number of the of the current place type
-                        $placeTypeId = $placeTypeModel->getTypeNumber($type);
+                $dictionary = array();
+                $types = $typeModel->getArrayPlaceTypes($pid);
+                foreach ($types as $type) {
 
-                        // get list of words based on the current location ID
-                        $dictionaryWords = $wordEnglishModel->getRawDictionaryWords($placeTypeId);
+                    // get the ID number of the of the current place type
+                    $placeTypeId = $placeTypeModel->getTypeNumber($type);
 
-                        // assign word array to the dictionary array using the place type as a key
-                        $dictionary[$type] = $dictionaryWords;
-                    }
-                    // add list of predefined words to the array
-                    $words[dictionary] = $dictionary;
-                    $results[words] = $words;
-                    $models = $results;
-                
+                    // get list of words based on the current location ID
+                    $dictionaryWords = $wordEnglishModel->getRawDictionaryWords($placeTypeId);
+
+                    // assign word array to the dictionary array using the place type as a key
+                    $dictionary = array_merge($dictionary, $dictionaryWords);
+                }
+                // add list of predefined words to the array
+                $words[dictionarywords] = $dictionary;
+                $results = array_merge($words,$results);
+                $models = $results;
                 break;
+
             case 'images':
                 $models = Image::model()->findAll();
                 break;
+
+            case 'wordnetwords':
+                if (!isset($_GET['word'])) {
+                    $this->sendResponse(500, sprintf('Bad word name: %s', $_GET['word']));
+                }
+
+                $word = $_GET['word'];
+                $wordno = WordnetWord::model()->getRawWordNumber($word);
+                $synsetno = array();
+                $synsetno = WordnetSense::model()->getRawSynsetNo($wordno);
+                $models = array();
+                foreach ($synsetno as $s) {
+                    $models[synset][] = WordnetSynset::model()->getRawDefinition($s);               
+                    
+                }
+                
+                
+                $models[total] = sizeof($models[synset]);
+                break;
+
             case 'places':
                 // get list of places and associated data
                 $models = Yii::app()->db->createCommand()->
@@ -225,7 +244,6 @@ class ApiController extends Controller {
                     } else { //success
                         $_POST['postobject']['filepath'] = $webPath . $usrPlaceId;
                         $_POST['postobject']['name'] = $imageName;
-
                         $model = new Image;
                     }
                 } else {
@@ -315,7 +333,6 @@ class ApiController extends Controller {
     }
 
     public function actionDelete() {
-
         switch ($_GET['model']) {
             case 'words':
                 $model = Word::model()->findByPk($_GET['id']);

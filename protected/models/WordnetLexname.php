@@ -85,5 +85,19 @@ class WordnetLexname extends CustomActiveRecord {
             'criteria' => $criteria,
         ));
     }
+    
+        public function getRawLexname($lexno) {
+
+        $lexQuery = Yii::app()->db->createCommand()
+                ->selectDistinct('l.lexname')->from('toponimo_wordnet.lexname as l')
+                ->where('l.lexno =:id', array(':id' => $lexno))
+                ->queryAll();
+  
+        foreach($lexQuery as $l){
+            $lexName = $l[lexname];
+        }
+        
+        return $lexName;
+    }
 
 }
