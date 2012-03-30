@@ -6,6 +6,18 @@ class ApiController extends Controller {
     public function actionList() {
         $results = array();
         switch ($_GET['model']) {
+            case 'contextualize':
+                if (!isset($_GET['word']) || (!isset($_GET['placetypes']))) {
+                    $this->sendResponse(500, sprintf('Bad id name: %s', $_GET['word'] . " " . $_GET['placetypes']));
+                }
+                
+                $score = array();
+                //loop through each type and extract the word count score
+                foreach ($_GET['placetypes'] as $type) {
+                    $score[$type] = $this->lesk($_GET['word'], $type);
+                }
+                
+                break;
             case 'words':
                 if (!isset($_GET['pid'])) {
                     $this->sendResponse(500, sprintf('Bad id name: %s', $_GET['pid']));
@@ -39,7 +51,7 @@ class ApiController extends Controller {
                 }
                 // add list of predefined words to the array
                 $words[dictionarywords] = $dictionary;
-                $results = array_merge($words,$results);
+                $results = array_merge($words, $results);
                 $models = $results;
                 break;
 
@@ -57,12 +69,12 @@ class ApiController extends Controller {
                 $synsetno = array();
                 $synsetno = WordnetSense::model()->getRawSynsetNo($wordno);
                 $models = array();
+
                 foreach ($synsetno as $s) {
-                    $models[synset][] = WordnetSynset::model()->getRawDefinition($s);               
-                    
+                    $models[synset][] = WordnetSynset::model()->getRawDefinition($s);
                 }
-                
-                
+
+
                 $models[total] = sizeof($models[synset]);
                 break;
 
@@ -391,10 +403,232 @@ class ApiController extends Controller {
             402 => 'Payment Required',
             403 => 'Forbidden',
             404 => 'Not Found',
-            500 => 'Internal Server Error (crazy shit happened)',
+            500 => 'Internal Server Error',
             501 => 'Not Implemented',
         );
         return (isset($codes[$status])) ? $codes[$status] : '';
+    }
+
+    private function lesk($word, $placetype) {
+
+        /*
+         *  Stopwords from http://www.d.umn.edu/~tpederse/Group01/WordNet/wordnet-stoplist.html
+         */
+        $stopWords = array(
+            "I",
+            "a",
+            "an",
+            "as",
+            "at",
+            "by",
+            "he",
+            "his",
+            "me",
+            "or",
+            "thou",
+            "us",
+            "who",
+            "against",
+            "amid",
+            "amidst",
+            "among",
+            "amongst",
+            "and",
+            "anybody",
+            "anyone",
+            "because",
+            "beside",
+            "circa",
+            "despite",
+            "during",
+            "everybody",
+            "everyone",
+            "for",
+            "from",
+            "her",
+            "hers",
+            "herself",
+            "him",
+            "himself",
+            "hisself",
+            "idem",
+            "if",
+            "into",
+            "it",
+            "its",
+            "itself",
+            "myself",
+            "nor",
+            "of",
+            "oneself",
+            "onto",
+            "our",
+            "ourself",
+            "ourselves",
+            "per",
+            "she",
+            "since",
+            "than",
+            "that",
+            "the",
+            "thee",
+            "theirs",
+            "them",
+            "themselves",
+            "they",
+            "thine",
+            "this",
+            "thyself",
+            "to",
+            "tother",
+            "toward",
+            "towards",
+            "unless",
+            "until",
+            "upon",
+            "versus",
+            "via",
+            "we",
+            "what",
+            "whatall",
+            "whereas",
+            "which",
+            "whichever",
+            "whichsoever",
+            "whoever",
+            "whom",
+            "whomever",
+            "whomso",
+            "whomsoever",
+            "whose",
+            "whosoever",
+            "with",
+            "without",
+            "ye",
+            "you",
+            "you-all",
+            "yours",
+            "yourself",
+            "yourselves",
+            "aboard",
+            "about",
+            "above",
+            "across",
+            "after",
+            "all",
+            "along",
+            "alongside",
+            "although",
+            "another",
+            "anti",
+            "any",
+            "anything",
+            "around",
+            "astride",
+            "aught",
+            "bar",
+            "barring",
+            "before",
+            "behind",
+            "below",
+            "beneath",
+            "besides",
+            "between",
+            "beyond",
+            "both",
+            "but",
+            "concerning",
+            "considering",
+            "down",
+            "each",
+            "either",
+            "enough",
+            "except",
+            "excepting",
+            "excluding",
+            "few",
+            "fewer",
+            "following",
+            "ilk",
+            "in",
+            "including",
+            "inside",
+            "like",
+            "many",
+            "mine",
+            "minus",
+            "more",
+            "most",
+            "naught",
+            "near",
+            "neither",
+            "nobody",
+            "none",
+            "nothing",
+            "notwithstanding",
+            "off",
+            "on",
+            "opposite",
+            "other",
+            "otherwise",
+            "outside",
+            "over",
+            "own",
+            "past",
+            "pending",
+            "plus",
+            "regarding",
+            "round",
+            "save",
+            "self",
+            "several",
+            "so",
+            "some",
+            "somebody",
+            "someone",
+            "something",
+            "somewhat",
+            "such",
+            "suchlike",
+            "sundry",
+            "there",
+            "though",
+            "through",
+            "throughout",
+            "till",
+            "twain",
+            "under",
+            "underneath",
+            "unlike",
+            "up",
+            "various",
+            "vis-a-vis",
+            "whatever",
+            "whatsoever",
+            "when",
+            "wherewith",
+            "wherewithal",
+            "while",
+            "within",
+            "worth",
+            "yet",
+            "yon",
+            "yonder");
+
+        $bestDefinition = 0;
+
+        $wordno = WordnetWord::model()->getRawWordNumber($word);
+        $synsetno = array();
+        $synsetno = WordnetSense::model()->getRawSynsetNo($wordno);
+        $definitions = array();
+
+        foreach ($synsetno as $s) {
+            $defintions[synset][] = WordnetSynset::model()->getRawDefinition($s);
+        }
+
+        $cleanedDefinitions = str_replace($stopWords, "", $definitions[synset]);
+        
+        
     }
 
 }
