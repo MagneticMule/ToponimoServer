@@ -18,7 +18,7 @@ class WordnetSemrel extends CustomActiveRecord {
      * Returns the static model of the specified AR class.
      * @return WordnetSemrel the static model class
      */
-    public static function model($className=__CLASS__) {
+    public static function model($className = __CLASS__) {
         return parent::model($className);
     }
 
@@ -81,8 +81,22 @@ class WordnetSemrel extends CustomActiveRecord {
         $criteria->compare('reltypeno', $this->reltypeno, true);
 
         return new CActiveDataProvider($this, array(
-            'criteria' => $criteria,
-        ));
+                    'criteria' => $criteria,
+                ));
+    }
+
+    public function getRawSemRel($synsetNo) {
+
+        $semQuery = Yii::app()->db->createCommand()
+                ->selectDistinct('s.synsetno2')->from('toponimo_wordnet.semrel as s')
+                ->where('s.synsetno1 =:id', array(':id' => $synsetNo))
+                ->queryAll();
+
+        foreach ($semQuery as $s) {
+            $semRel = $s[synsetno2];
+        }
+
+        return $semRel;
     }
 
 }

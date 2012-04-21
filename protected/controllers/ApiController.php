@@ -10,13 +10,13 @@ class ApiController extends Controller {
                 if (!isset($_GET['word']) || (!isset($_GET['placetypes']))) {
                     $this->sendResponse(500, sprintf('Bad id name: %s', $_GET['word'] . " " . $_GET['placetypes']));
                 }
-                
+
                 $score = array();
                 //loop through each type and extract the word count score
                 foreach ($_GET['placetypes'] as $type) {
                     $score[$type] = $this->lesk($_GET['word'], $type);
                 }
-                
+
                 break;
             case 'words':
                 if (!isset($_GET['pid'])) {
@@ -68,17 +68,38 @@ class ApiController extends Controller {
                 $wordno = WordnetWord::model()->getRawWordNumber($word);
                 $synsetno = array();
                 $synsetno = WordnetSense::model()->getRawSynsetNo($wordno);
-                $models = array();
+                $result = array();
 
                 foreach ($synsetno as $s) {
-                    $models[synset][] = WordnetSynset::model()->getRawDefinition($s);
+                    $result[] = WordnetSynset::model()->getRawDefinition($s);
                 }
+
+                $models[synset] = array_reverse($result);
+
+                function cmp($a, $b) {
+                    if ($a[lexno] == $b[lexno])
+                        return 0;
+                    return ($a[lexno] < $b[lexno]) ? -1 : 1;
+                }
+
+                // usort($models, cmp);
+
+                $atonymQuery = Yii::app()->db->createCommand()
+                        ->select('w.lemma')->from('toponimo_wordnet.word as w')
+                        ->join('toponimo_wordnet.sense sense', 'sense.wordno = w.wordno')
+                        ->join('toponimo_wordnet.synset syn', 'syn.synsetno = sense.synsetno')
+                        ->join('toponimo_wordnet.semrel semrel', 'semrel.synsetno1 = syn.synsetno')
+                        ->where('w.lemma =:id', array(':id' => $word))
+                        ->queryAll();
+                
+
 
 
                 $models[total] = sizeof($models[synset]);
                 break;
 
             case 'places':
+
                 // get list of places and associated data
                 $models = Yii::app()->db->createCommand()->
                         selectDistinct('name, latitude, longitude, p.placeid, vicinity')
@@ -254,9 +275,13 @@ class ApiController extends Controller {
                         $this->sendResponse(501, sprintf('Could not move file %s to target location', $uploadedImage));
                         exit;
                     } else { //success
-                        $_POST['postobject']['filepath'] = $webPath . $usrPlaceId;
+                        $_POST['postobject']['filepath'] = $webPath . $usrPlaceId . '/';
                         $_POST['postobject']['name'] = $imageName;
+                        // create thumbnails
+                        $imageTemp = imagecreatefromjpeg($uploadedImage);
+                        
                         $model = new Image;
+                        $this->sendResponse(200, $imageName);
                     }
                 } else {
                     $this->sendResponse(401, sprintf('Possible upload file attack: %s', $usrImageName));
@@ -627,8 +652,6 @@ class ApiController extends Controller {
         }
 
         $cleanedDefinitions = str_replace($stopWords, "", $definitions[synset]);
-        
-        
     }
 
 }

@@ -105,11 +105,11 @@ class WordnetSense extends CustomActiveRecord {
                 ->selectDistinct('w.synsetno')->from('toponimo_wordnet.sense as w')
                 ->where('w.wordno =:id', array(':id' => $wordno))
                 ->queryAll();
-  
-        foreach($wordsQuery as $w){
+
+        foreach ($wordsQuery as $w) {
             $synsetNo[] = $w[synsetno];
         }
-        
+
         return $synsetNo;
     }
 

@@ -103,6 +103,7 @@ class WordnetSynset extends CustomActiveRecord {
         $definitionQuery = Yii::app()->db->createCommand()
                 ->selectDistinct('s.definition, s.lexno')->from('toponimo_wordnet.synset as s')
                 ->where('s.synsetno =:id', array(':id' => $synsetNo))
+                ->order('s.lexno desc')
                 ->queryAll();
         
          
@@ -113,6 +114,8 @@ class WordnetSynset extends CustomActiveRecord {
             $definitions[lex] = WordnetLexname::model()->getRawLexname($d[lexno]);
             $definitions[synsetno] = $synsetNo;
             $definitions[sample] = WordnetSample::model()->getRawSample($synsetNo, $sampleNo);
+            $definitions[lexno] = $d[lexno];
+            $atonymNo = WordnetSemrel::model()->getRawSemRel($synsetNo);
             $sampleNo ++;
         }
 
