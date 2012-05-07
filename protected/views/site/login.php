@@ -4,7 +4,6 @@ $this->pageTitle = Yii::app()->name . ' - Login';
   'Login',
   ); * */
 ?>
-<script src="http://connect.facebook.net/en_US/all.js"></script>
 
 <div id="fb-root"></div>
 <script src="http://connect.facebook.net/en_US/all.js"></script>
@@ -17,7 +16,7 @@ $this->pageTitle = Yii::app()->name . ' - Login';
 
 <h1>Login</h1>
 
-<p>Please fill out the following form with your login credentials:</p>
+<p>Enter your username and password to login</p>
 
 <div class="form">
     <?php
@@ -42,9 +41,7 @@ $this->pageTitle = Yii::app()->name . ' - Login';
         <?php echo $form->labelEx($model, 'password'); ?>
         <?php echo $form->passwordField($model, 'password'); ?>
         <?php echo $form->error($model, 'password'); ?>
-        <p class="hint">
-			Hint: You may login with <tt>demo/demo</tt> or <tt>admin/admin</tt>.
-        </p>
+
     </div>
 
     <div class="row rememberMe">
@@ -55,6 +52,7 @@ $this->pageTitle = Yii::app()->name . ' - Login';
 
     <div class="row buttons">
         <?php echo CHtml::submitButton('Login'); ?>
+       <?php $this->widget('bootstrap.widgets.BootButton', array('buttonType'=>'submit', 'icon'=>'ok', 'label'=>'Submit')); ?>
     </div>
 
     <?php $this->endWidget(); ?>

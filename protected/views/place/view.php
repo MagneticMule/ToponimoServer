@@ -68,15 +68,12 @@ if ($words != null) {
     foreach ($words as $word) {
         echo '<div id="wordcontainer"><div id="wordtitle">' . ucfirst($word) . '</div>';
         echo '<div id="ratingform">';
-        echo 'Relevancy ';
-        echo CHtml::beginForm();
-        $this->widget('CStarRating', array(
-            'name' => 'relevancy',
-            'minRating' => 1,
-            'maxRating' => 5,
-            'starCount' => 5,
+        $this->widget('bootstrap.widgets.BootButton', array(
+            'label' => 'Add to Word Bank',
+            'type' => 'info', // '', 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
+            'size' => 'mini', // '', 'large', 'small' or 'mini'
         ));
-        echo CHtml::endForm();
+
         echo '</div><div id="wordheader"><div id="definitiontext">';
         $defcount = 1;
         $wordno = new CActiveDataProvider(WordnetWord::model()->getWordNumber($word));

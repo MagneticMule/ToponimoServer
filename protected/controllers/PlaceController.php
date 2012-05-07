@@ -25,7 +25,7 @@ class PlaceController extends Controller {
     public function accessRules() {
         return array(
             array('allow', // allow all users to perform 'index' and 'view' actions
-                'actions' => array('index', 'view'),
+                'actions' => array('index', 'view', 'updateAjaxMap', 'updateResults'),
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -59,8 +59,8 @@ class PlaceController extends Controller {
     public function actionCreate() {
         $model = new Place;
 
-        // Uncomment the following line if AJAX validation is needed
-        // $this->performAjaxValidation($model);
+// Uncomment the following line if AJAX validation is needed
+// $this->performAjaxValidation($model);
 
         if (isset($_POST['Place'])) {
             $model->attributes = $_POST['Place'];
@@ -81,7 +81,7 @@ class PlaceController extends Controller {
     public function actionUpdate($id) {
         $model = $this->loadModel($id);
 
-        // Uncomment the following line if AJAX validation is needed
+// Uncomment the following line if AJAX validation is needed
         $this->performAjaxValidation($model);
 
         if (isset($_POST['Place'])) {
@@ -102,10 +102,10 @@ class PlaceController extends Controller {
      */
     public function actionDelete($id) {
         if (Yii::app()->request->isPostRequest) {
-            // we only allow deletion via POST request
+// we only allow deletion via POST request
             $this->loadModel($id)->delete();
 
-            // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
             if (!isset($_GET['ajax']))
                 $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
         }
@@ -114,22 +114,53 @@ class PlaceController extends Controller {
     }
 
     /**
-     * Lists all models.
+     * List all models based on distance to location given in lat/lng or
+     * list all models based on search query.
+     * Defaults to list every model.
      */
     public function actionIndex() {
         $criteria = new CDbCriteria();
-
-        if (isset($_GET['q'])) {
+        if (isset($_GET['lat']) && isset($_GET['lng'])) {
+            $criteria->select = '*, ( 6371 * acos( cos( radians(' . $_GET['lat'] . ') ) 
+                * cos( radians( latitude ) ) * cos( radians( longitude ) - 
+                radians(' . $_GET['lng'] . ') ) + sin( radians(' . $_GET['lat'] . ') ) 
+                * sin( radians( latitude ) ) ) ) * 1.609344 AS distance';
+            $criteria->order = 'distance asc'; 
+        } elseif (isset($_GET['q'])) {
             $query = $_GET['q'];
             $criteria->compare('name', $query, true, 'OR', true);
             $criteria->compare('vicinity', $query, true, 'OR', true);
-            
         }
 
+        $criteria->limit = 20;
         $dataProvider = new CActiveDataProvider('Place', array('criteria' => $criteria));
+        $dataProvider->setPagination(false);
         $this->render('index', array(
             'dataProvider' => $dataProvider,
         ));
+    }
+
+    public function actionUpdateResults($lat,$lng) {
+     
+        $model = Place::model();
+        
+        //$model->updateLocalPlaces($lat, $lng);
+
+        $criteria = new CDbCriteria();
+
+        $criteria->select = '*, ( 6371 * acos( cos( radians(' . $lat . ') ) 
+                * cos( radians( latitude ) ) * cos( radians( longitude ) - 
+                radians(' . $lng . ') ) + sin( radians(' . $lat . ') ) 
+                * sin( radians( latitude ) ) ) ) * 1.609344 AS distance';
+        $criteria->order = 'distance asc';
+        $criteria->limit = 20;
+        $dataProvider = new CActiveDataProvider('Place', array('criteria' => $criteria));
+        $dataProvider->setPagination(false);
+        $this->render('index', array(
+            'dataProvider' => $dataProvider,
+        ));
+        
+        return $dataProvider;
     }
 
     /**
@@ -152,7 +183,7 @@ class PlaceController extends Controller {
      * @param integer the ID of the model to be loaded
      */
     public function loadModel($id) {
-        $model = Place::model()->with('placetypes')->findByPk($id);
+        $model = Place::model()->with('type')->findByPk($id);
         if ($model === null)
             throw new CHttpException(404, 'The requested page does not exist.');
         return $model;
@@ -169,4 +200,30 @@ class PlaceController extends Controller {
         }
     }
 
+    /*
+      public function searchPlaceResults($lat, $lng, $range) {
+      if (is_null($range)) {
+      $range = 1;
+      }
+      $model = Place::model();
+      $model->getLocalPlaces($lat, $lng);
+
+
+
+      $haversineQuery ="SELECT place.latitude, place.longitude, place.vicinity, place.placeid, place.name, ( 6371 * acos( cos( radians('" . $lat
+      . "') ) * cos( radians( place.latitude ) ) * cos( radians( place.longitude ) - radians('" . $lng . "') ) + sin( radians('"
+      . $lat . "') ) * sin( radians( place.latitude ) ) ) ) AS distance FROM place HAVING distance <'" . $usr_range . "' ORDER BY distance LIMIT 0 , 30";
+
+      $connection = Yii::app()->db;
+      $command = $connection->createCommand($haversineQuery);
+      $results = $command->queryAll();
+
+      $dataProvider = new CSqlDataProvider($results, array(
+      'pagination' => array('pageSize' => 10)
+      ));
+
+      return $dataProvider;
+      }
+     */
 }
+

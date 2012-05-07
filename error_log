@@ -248,3 +248,156 @@
 [27-Feb-2012 22:52:17] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/models/WordnetSample.php on line 97
 [27-Feb-2012 22:52:20] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/models/WordnetSample.php on line 97
 [27-Feb-2012 23:00:42] PHP Fatal error:  Cannot use [] for reading in /home7/toponimo/public_html/toponimo/protected/models/WordnetSample.php on line 97
+[22-Apr-2012 06:28:14] PHP Parse error:  syntax error, unexpected ',' in /home7/toponimo/public_html/toponimo/protected/config/main.php on line 99
+[22-Apr-2012 06:28:18] PHP Parse error:  syntax error, unexpected ',' in /home7/toponimo/public_html/toponimo/protected/config/main.php on line 99
+[22-Apr-2012 06:28:28] PHP Parse error:  syntax error, unexpected ',' in /home7/toponimo/public_html/toponimo/protected/config/main.php on line 99
+[22-Apr-2012 06:30:50] PHP Parse error:  syntax error, unexpected ',' in /home7/toponimo/public_html/toponimo/protected/config/main.php on line 102
+[22-Apr-2012 06:30:58] PHP Parse error:  syntax error, unexpected ',' in /home7/toponimo/public_html/toponimo/protected/config/main.php on line 102
+[22-Apr-2012 07:03:03] PHP Parse error:  syntax error, unexpected ',' in /home7/toponimo/public_html/toponimo/protected/config/main.php on line 33
+[22-Apr-2012 07:03:58] PHP Parse error:  syntax error, unexpected ',' in /home7/toponimo/public_html/toponimo/protected/config/main.php on line 33
+[22-Apr-2012 07:04:01] PHP Parse error:  syntax error, unexpected ',' in /home7/toponimo/public_html/toponimo/protected/config/main.php on line 33
+[22-Apr-2012 10:13:47] PHP Parse error:  syntax error, unexpected '<' in /home7/toponimo/public_html/toponimo/protected/modules/profile/views/profile/view.php on line 19
+[22-Apr-2012 10:13:50] PHP Parse error:  syntax error, unexpected '<' in /home7/toponimo/public_html/toponimo/protected/modules/profile/views/profile/view.php on line 19
+[22-Apr-2012 11:08:06] PHP Parse error:  syntax error, unexpected '.' in /home7/toponimo/public_html/toponimo/protected/modules/profile/views/profile/view.php on line 18
+[22-Apr-2012 11:08:08] PHP Parse error:  syntax error, unexpected '.' in /home7/toponimo/public_html/toponimo/protected/modules/profile/views/profile/view.php on line 18
+[22-Apr-2012 15:51:23] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home7/toponimo/public_html/toponimo/protected/modules/user/components/YumUserMenu.php on line 79
+[22-Apr-2012 15:51:27] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home7/toponimo/public_html/toponimo/protected/modules/user/components/YumUserMenu.php on line 79
+[23-Apr-2012 08:32:15] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home7/toponimo/public_html/toponimo/protected/config/main.php on line 148
+[23-Apr-2012 08:32:25] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home7/toponimo/public_html/toponimo/protected/config/main.php on line 148
+[23-Apr-2012 08:32:33] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home7/toponimo/public_html/toponimo/protected/config/main.php on line 148
+[23-Apr-2012 08:34:11] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home7/toponimo/public_html/toponimo/protected/config/main.php on line 148
+[23-Apr-2012 08:34:35] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home7/toponimo/public_html/toponimo/protected/config/main.php on line 144
+[23-Apr-2012 08:34:38] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home7/toponimo/public_html/toponimo/protected/config/main.php on line 144
+[23-Apr-2012 08:35:02] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home7/toponimo/public_html/toponimo/protected/config/main.php on line 144
+[23-Apr-2012 08:36:57] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home7/toponimo/public_html/toponimo/protected/config/main.php on line 148
+[23-Apr-2012 15:12:36] PHP Parse error:  syntax error, unexpected '<' in /home7/toponimo/public_html/toponimo/protected/views/place/index.php on line 25
+[23-Apr-2012 15:12:43] PHP Parse error:  syntax error, unexpected '<' in /home7/toponimo/public_html/toponimo/protected/views/place/index.php on line 25
+[23-Apr-2012 19:58:37] PHP Parse error:  syntax error, unexpected '>' in /home7/toponimo/public_html/toponimo/protected/views/place/_ajaxMap.php on line 25
+[23-Apr-2012 19:58:43] PHP Parse error:  syntax error, unexpected '>' in /home7/toponimo/public_html/toponimo/protected/views/place/_ajaxMap.php on line 25
+[24-Apr-2012 09:43:00] PHP Fatal error:  Cannot unset string offsets in /home7/toponimo/yii/framework/web/helpers/CHtml.php on line 1037
+[27-Apr-2012 15:39:16] PHP Fatal error:  Call to undefined function  searchplaceresults() in /home7/toponimo/public_html/toponimo/protected/views/place/index.php on line 123
+[27-Apr-2012 15:40:19] PHP Fatal error:  Call to undefined function  searchplaceresults() in /home7/toponimo/public_html/toponimo/protected/views/place/index.php on line 123
+[27-Apr-2012 16:59:42] PHP Fatal error:  Uncaught exception 'CException' with message 'Alias "application.components.FirePHPCore.fb" is invalid. Make sure it points to an existing directory or file.' in /home7/toponimo/yii/framework/YiiBase.php:346
+Stack trace:
+#0 /home7/toponimo/public_html/toponimo/index.php(14): YiiBase::import('application.com...', true)
+#1 {main}
+  thrown in /home7/toponimo/yii/framework/YiiBase.php on line 346
+[27-Apr-2012 17:01:50] PHP Fatal error:  Uncaught exception 'CException' with message 'Alias "application.components.FirePHPCore.fb" is invalid. Make sure it points to an existing directory or file.' in /home7/toponimo/yii/framework/YiiBase.php:346
+Stack trace:
+#0 /home7/toponimo/public_html/toponimo/index.php(14): YiiBase::import('application.com...', true)
+#1 {main}
+  thrown in /home7/toponimo/yii/framework/YiiBase.php on line 346
+[27-Apr-2012 17:01:57] PHP Fatal error:  Uncaught exception 'CException' with message 'Alias "application.components.FirePHPCore.fb" is invalid. Make sure it points to an existing directory or file.' in /home7/toponimo/yii/framework/YiiBase.php:346
+Stack trace:
+#0 /home7/toponimo/public_html/toponimo/index.php(14): YiiBase::import('application.com...', true)
+#1 {main}
+  thrown in /home7/toponimo/yii/framework/YiiBase.php on line 346
+[27-Apr-2012 17:02:02] PHP Fatal error:  Uncaught exception 'CException' with message 'Alias "application.components.FirePHPCore.fb" is invalid. Make sure it points to an existing directory or file.' in /home7/toponimo/yii/framework/YiiBase.php:346
+Stack trace:
+#0 /home7/toponimo/public_html/toponimo/index.php(14): YiiBase::import('application.com...', true)
+#1 {main}
+  thrown in /home7/toponimo/yii/framework/YiiBase.php on line 346
+[27-Apr-2012 17:02:36] PHP Fatal error:  Uncaught exception 'CException' with message 'Alias "application.components.FirePHPCore.fb" is invalid. Make sure it points to an existing directory or file.' in /home7/toponimo/yii/framework/YiiBase.php:346
+Stack trace:
+#0 /home7/toponimo/public_html/toponimo/index.php(14): YiiBase::import('application.com...', true)
+#1 {main}
+  thrown in /home7/toponimo/yii/framework/YiiBase.php on line 346
+[27-Apr-2012 17:04:21] PHP Fatal error:  Uncaught exception 'CException' with message 'Alias "application.components.FirePHPCore.fb" is invalid. Make sure it points to an existing directory or file.' in /home7/toponimo/yii/framework/YiiBase.php:346
+Stack trace:
+#0 /home7/toponimo/public_html/toponimo/index.php(14): YiiBase::import('application.com...', true)
+#1 {main}
+  thrown in /home7/toponimo/yii/framework/YiiBase.php on line 346
+[27-Apr-2012 17:05:03] PHP Fatal error:  Uncaught exception 'CException' with message 'Alias "application.components.FirePHPCore.fb" is invalid. Make sure it points to an existing directory or file.' in /home7/toponimo/yii/framework/YiiBase.php:346
+Stack trace:
+#0 /home7/toponimo/public_html/toponimo/index.php(14): YiiBase::import('application.com...', true)
+#1 {main}
+  thrown in /home7/toponimo/yii/framework/YiiBase.php on line 346
+[27-Apr-2012 17:05:51] PHP Fatal error:  Uncaught exception 'CException' with message 'Alias "application.components.FirePHPCore.fb" is invalid. Make sure it points to an existing directory or file.' in /home7/toponimo/yii/framework/YiiBase.php:346
+Stack trace:
+#0 /home7/toponimo/public_html/toponimo/index.php(14): YiiBase::import('application.com...', true)
+#1 {main}
+  thrown in /home7/toponimo/yii/framework/YiiBase.php on line 346
+[27-Apr-2012 17:12:37] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:12:38] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:12:39] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:12:39] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:12:39] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:12:40] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:12:52] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:12:53] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:12:54] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:12:54] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:12:55] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:12:55] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:13:28] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:13:29] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:13:30] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:13:30] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:13:31] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:13:31] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:14:34] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:14:34] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:14:36] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:14:37] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:14:37] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:14:37] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:15:32] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:15:33] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:15:34] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:15:34] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:15:34] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:15:35] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:15:38] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:15:39] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:15:39] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:15:39] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:15:39] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:15:39] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:15:43] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:15:44] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:15:45] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:15:45] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:15:45] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:15:46] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:15:47] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:15:47] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:15:48] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:15:48] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:15:48] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:15:48] PHP Fatal error:  Class 'EFirephp' not found in /home7/toponimo/yii/framework/YiiBase.php on line 222
+[27-Apr-2012 17:16:48] PHP Fatal error:  Class 'FirePHP' not found in /home7/toponimo/public_html/toponimo/protected/extensions/firephp/EFirephp.php on line 142
+[27-Apr-2012 17:16:50] PHP Fatal error:  Class 'FirePHP' not found in /home7/toponimo/public_html/toponimo/protected/extensions/firephp/EFirephp.php on line 142
+[27-Apr-2012 17:16:52] PHP Fatal error:  Class 'FirePHP' not found in /home7/toponimo/public_html/toponimo/protected/extensions/firephp/EFirephp.php on line 142
+[27-Apr-2012 17:16:52] PHP Fatal error:  Class 'FirePHP' not found in /home7/toponimo/public_html/toponimo/protected/extensions/firephp/EFirephp.php on line 142
+[27-Apr-2012 17:41:48] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home7/toponimo/public_html/toponimo/protected/models/Place.php on line 121
+[27-Apr-2012 17:49:40] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home7/toponimo/public_html/toponimo/protected/models/Place.php on line 121
+[27-Apr-2012 18:33:12] PHP Fatal error:  Call to a member function getAttributeLabel() on a non-object in /home7/toponimo/public_html/toponimo/protected/views/place/_view.php on line 8
+[27-Apr-2012 18:33:37] PHP Fatal error:  Call to a member function getAttributeLabel() on a non-object in /home7/toponimo/public_html/toponimo/protected/views/place/_view.php on line 8
+[27-Apr-2012 18:34:11] PHP Fatal error:  Call to a member function getAttributeLabel() on a non-object in /home7/toponimo/public_html/toponimo/protected/views/place/_view.php on line 8
+[27-Apr-2012 18:34:59] PHP Fatal error:  Call to a member function getAttributeLabel() on a non-object in /home7/toponimo/public_html/toponimo/protected/views/place/_view.php on line 8
+[27-Apr-2012 18:35:55] PHP Fatal error:  Call to a member function getAttributeLabel() on a non-object in /home7/toponimo/public_html/toponimo/protected/views/place/_view.php on line 8
+[27-Apr-2012 18:44:52] PHP Fatal error:  Call to a member function getAttributeLabel() on a non-object in /home7/toponimo/public_html/toponimo/protected/views/place/_view.php on line 8
+[30-Apr-2012 02:21:32] PHP Fatal error:  Call to a member function getAttributeLabel() on a non-object in /home7/toponimo/public_html/toponimo/protected/views/place/_view.php on line 8
+[30-Apr-2012 02:29:00] PHP Fatal error:  Call to a member function getAttributeLabel() on a non-object in /home7/toponimo/public_html/toponimo/protected/views/place/_view.php on line 8
+[30-Apr-2012 02:38:01] PHP Fatal error:  Call to a member function getAttributeLabel() on a non-object in /home7/toponimo/public_html/toponimo/protected/views/place/_view.php on line 8
+[30-Apr-2012 11:36:17] PHP Fatal error:  Call to undefined function  newcactivedataprovider() in /home7/toponimo/public_html/toponimo/protected/controllers/PlaceController.php on line 135
+[30-Apr-2012 17:30:46] PHP Fatal error:  Call to a member function setPagination() on a non-object in /home7/toponimo/public_html/toponimo/protected/controllers/PlaceController.php on line 134
+[30-Apr-2012 17:30:48] PHP Fatal error:  Call to a member function setPagination() on a non-object in /home7/toponimo/public_html/toponimo/protected/controllers/PlaceController.php on line 134
+[01-May-2012 08:43:12] PHP Fatal error:  Call to a member function get() on a non-object in /home7/toponimo/public_html/toponimo/protected/modules/user/models/YumUser.php on line 365
+[01-May-2012 08:43:28] PHP Fatal error:  Call to a member function get() on a non-object in /home7/toponimo/public_html/toponimo/protected/modules/user/models/YumUser.php on line 365
+[01-May-2012 08:44:09] PHP Fatal error:  Call to a member function get() on a non-object in /home7/toponimo/public_html/toponimo/protected/modules/user/models/YumUser.php on line 365
+[01-May-2012 09:41:18] PHP Fatal error:  Call to a member function textFieldRow() on a non-object in /home7/toponimo/public_html/toponimo/protected/views/site/index.php on line 13
+[01-May-2012 09:42:20] PHP Fatal error:  Call to a member function textFieldRow() on a non-object in /home7/toponimo/public_html/toponimo/protected/views/site/index.php on line 13
+[01-May-2012 09:42:25] PHP Fatal error:  Call to a member function textFieldRow() on a non-object in /home7/toponimo/public_html/toponimo/protected/views/site/index.php on line 13
+[01-May-2012 10:02:55] PHP Fatal error:  Call to a member function updateLocalPlaces() on a non-object in /home7/toponimo/public_html/toponimo/protected/controllers/PlaceController.php on line 150
+[01-May-2012 10:02:56] PHP Fatal error:  Call to a member function updateLocalPlaces() on a non-object in /home7/toponimo/public_html/toponimo/protected/controllers/PlaceController.php on line 150
+[01-May-2012 10:03:07] PHP Fatal error:  Call to a member function updateLocalPlaces() on a non-object in /home7/toponimo/public_html/toponimo/protected/controllers/PlaceController.php on line 150
+[01-May-2012 10:03:26] PHP Fatal error:  Call to a member function updateLocalPlaces() on a non-object in /home7/toponimo/public_html/toponimo/protected/controllers/PlaceController.php on line 150
+[01-May-2012 10:03:31] PHP Fatal error:  Call to undefined function  updatelocalplaces() in /home7/toponimo/public_html/toponimo/protected/controllers/PlaceController.php on line 150
+[01-May-2012 10:03:38] PHP Fatal error:  Call to undefined function  updatelocalplaces() in /home7/toponimo/public_html/toponimo/protected/controllers/PlaceController.php on line 150
+[01-May-2012 10:04:23] PHP Fatal error:  Call to undefined function  updatelocalplaces() in /home7/toponimo/public_html/toponimo/protected/controllers/PlaceController.php on line 150
+[01-May-2012 10:04:28] PHP Fatal error:  Call to undefined function  updatelocalplaces() in /home7/toponimo/public_html/toponimo/protected/controllers/PlaceController.php on line 150
+[01-May-2012 10:04:32] PHP Fatal error:  Undefined class constant 'model' in /home7/toponimo/public_html/toponimo/protected/controllers/PlaceController.php on line 150
+[01-May-2012 10:05:50] PHP Fatal error:  Undefined class constant 'model' in /home7/toponimo/public_html/toponimo/protected/controllers/PlaceController.php on line 150
+[01-May-2012 10:07:48] PHP Fatal error:  Undefined class constant 'model' in /home7/toponimo/public_html/toponimo/protected/controllers/PlaceController.php on line 150
+[01-May-2012 10:07:51] PHP Fatal error:  Undefined class constant 'model' in /home7/toponimo/public_html/toponimo/protected/controllers/PlaceController.php on line 150

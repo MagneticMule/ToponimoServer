@@ -4,52 +4,76 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="language" content="en" />
 
+
+        <title><?php echo CHtml::encode($this->pageTitle); ?></title>
+        <?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
         <!-- blueprint CSS framework -->
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css" media="screen, projection" />
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css" media="print" />
-        <!--[if lt IE 8]>
+        <!--[if IE 8]>
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection" />
         <![endif]-->
-
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
 
-        <title><?php echo CHtml::encode($this->pageTitle); ?></title>
     </head>
 
     <body>
-        <div id="page_title">
-            <div class ="container">
-                <div id="logo"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/toponimo_ident_240.png" width="200" /></div>
-                <div id="mainmenu">
-                    <?php
-                    $this->widget('zii.widgets.CMenu', array(
-                        'items' => array(
-                            array('label' => 'Home', 'url' => array('/site/index')),
-                            array('label' => 'About', 'url' => array('/site/page', 'view' => 'about')),
-                            array('label' => 'Contact', 'url' => array('/site/contact')),
-                            array('url' => Yii::app()->getModule('user')->loginUrl, 'label' => Yii::app()->getModule('user')->t("Login"), 'visible' => Yii::app()->user->isGuest),
-                            array('url' => Yii::app()->getModule('user')->registrationUrl, 'label' => Yii::app()->getModule('user')->t("Register"), 'visible' => Yii::app()->user->isGuest),
-                            array('url' => Yii::app()->getModule('user')->profileUrl, 'label' => Yii::app()->getModule('user')->t("Profile"), 'visible' => !Yii::app()->user->isGuest),
-                            array('url' => Yii::app()->getModule('user')->logoutUrl, 'label' => Yii::app()->getModule('user')->t("Logout") . ' (' . Yii::app()->user->name . ')', 'visible' => !Yii::app()->user->isGuest),
-                        //array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-                        //array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-                        ),
-                    ));
-                    ?>
-                </div><!-- mainmenu -->
-            </div>
-        </div>
-        <div class="container" id="page">
+        <?php
+        Yii::app()->bootstrap->registerTypeahead('.typeahead', array(
+            'source' => array('Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Dakota', 'North Carolina', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'),
+            'items' => 4,
+            'matcher' => "js:function(item) {
+        return ~item.toLowerCase().indexOf(this.query.toLowerCase());
+    }",
+        ));
+        
 
-            <?php if (isset($this->breadcrumbs)): ?>
-                <?php
-                $this->widget('zii.widgets.CBreadcrumbs', array(
-                    'links' => $this->breadcrumbs,
-                ));
-                ?><!-- breadcrumbs -->
-            <?php endif ?>
+        $this->widget('bootstrap.widgets.BootNavbar', array(
+            
+            'fixed' => 'top',
+            'brand' => '<img src="' . Yii::app()->request->baseUrl . '/images/toponimo_ident_240.png" width="140">',
+            'brandUrl' => 'http://www.toponimo.org/toponimo',
+            'collapse' => false, // requires bootstrap-responsive.css
+            'items' => array(
+                '<form class="navbar-search pull-left">
+                    <input type="search" class="search-query span3" 
+                    placeholder="Search for places or words..." 
+                    name="q" 
+                    value="' . (isset($_GET["lat"]) ? CHtml::encode($_GET["lat"]) : "") . '"/>
+                        </form>',
+                array(
+                    'class' => 'bootstrap.widgets.BootMenu',
+                    'htmlOptions' => array('class' => 'pull-right'),
+                    'items' => array(
+                        array('label' => 'Word Bank','url' => '#', 'icon'=>'icon-bookmark icon-white','visible' => !Yii::app()->user->isGuest),
+                        array('label' => 'Places', 'url' => '#', 'icon'=>'icon-screenshot icon-white','visible' => !Yii::app()->user->isGuest),
+                        array('label' => 'Words', 'url' => '#', 'icon'=>'icon-book icon-white','visible' => !Yii::app()->user->isGuest),
+                        '---',
+                        array('label' => 'Login', 'url' => array('/user/auth'), 'visible' => Yii::app()->user->isGuest),
+                        array('label' => ucfirst(Yii::app()->user->name), 'visible' => !Yii::app()->user->isGuest, 'items' => array(
+                                array('label' => 'Profile', 'icon' => 'icon-user', 'url' => '#'),
+                                '---',
+                                array('label' => 'Logout', 'icon' => 'arrow-right', 'url' => array('/site/logout'))
+                        )),
+                    ),
+                ),
+            ),
+        ));
+        ?>
+
+        <div id="page_title"></div>
+
+        <div class="container" id="page">
             <div id="shadow">
+                <!-- <?php if (isset($this->breadcrumbs)): ?>
+                    <?php
+                    $this->widget('zii.widgets.CBreadcrumbs', array(
+                        'links' => $this->breadcrumbs,
+                    ));
+                    ?> breadcrumbs -->
+                <?php endif ?>
+
                 <?php echo $content; ?>
             </div>
 

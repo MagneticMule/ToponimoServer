@@ -3,9 +3,18 @@
 class AuthController extends Controller {
 
     public $defaultAction = 'login';
+    
+    private function authenticate($user) {
+     
+        $identity = new YumUserIdentity($this->username, $this->password);
+    }
 
     public function actionLogin() {
-        $model = new UserLogin;
+        if (!isset($model))
+ 
+
+        $module = Yum::module();
+        
         if (isset($_POST['UserLogin'])) {
             $model->attributes = $_POST['UserLogin'];
             // $model->username = $_POST['username'];
