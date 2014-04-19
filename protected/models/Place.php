@@ -117,7 +117,7 @@ class Place extends CActiveRecord {
         //Good practice suggests that RADIUS should be set depending on the accuracy on the devices returned location
         $g_radius = 'radius=1000'; //the radius containing the search results
         $g_sensor = 'sensor=true'; //always pass true for sensor value
-        $g_key = 'AIzaSyARV2mbzLBlF697bCAa03UysnaF2FK2eec'; // our google api key
+        $g_key = ''; // our google api key
         $g_request = 'https://maps.googleapis.com/maps/api/place/search/json?location='; // the request body
         $request = $g_request . $lat . ',' . $lng . '&' . $g_radius . '&' . $g_sensor . '&key=' . $g_key; //the compiled request
         //read the contents of the page to a string
