@@ -15,7 +15,7 @@ class Word extends CActiveRecord {
      * Returns the static model of the specified AR class.
      * @return Word the static model class
      */
-    public static function model($className=__CLASS__) {
+    public static function model($className = __CLASS__) {
         return parent::model($className);
     }
 
@@ -37,8 +37,6 @@ class Word extends CActiveRecord {
             array('userid', 'numerical', 'integerOnly' => true),
             array('placeid', 'length', 'max' => 60),
             array('word', 'length', 'max' => 30),
-            // The following rule is used by search().
-// Please remove those attributes that should not be searched.
             array('word, userid', 'safe', 'on' => 'search'),
         );
     }

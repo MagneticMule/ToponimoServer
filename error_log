@@ -401,3 +401,114 @@ Stack trace:
 [01-May-2012 10:05:50] PHP Fatal error:  Undefined class constant 'model' in /home7/toponimo/public_html/toponimo/protected/controllers/PlaceController.php on line 150
 [01-May-2012 10:07:48] PHP Fatal error:  Undefined class constant 'model' in /home7/toponimo/public_html/toponimo/protected/controllers/PlaceController.php on line 150
 [01-May-2012 10:07:51] PHP Fatal error:  Undefined class constant 'model' in /home7/toponimo/public_html/toponimo/protected/controllers/PlaceController.php on line 150
+[02-May-2012 17:02:31] PHP Fatal error:  Call to a member function type() on a non-object in /home7/toponimo/public_html/toponimo/protected/views/place/_view.php on line 30
+[02-May-2012 17:03:09] PHP Fatal error:  Function name must be a string in /home7/toponimo/public_html/toponimo/protected/views/place/_view.php on line 30
+[07-May-2012 05:30:34] PHP Fatal error:  Call to undefined method stdClass::validate() in /home7/toponimo/public_html/toponimo/protected/controllers/AuthController.php on line 24
+[07-May-2012 22:59:12] PHP Fatal error:  Call to a member function enableMarkerClusterer() on a non-object in /home7/toponimo/public_html/toponimo/protected/views/place/index.php on line 134
+[07-May-2012 22:59:43] PHP Fatal error:  Call to a member function enableMarkerClusterer() on a non-object in /home7/toponimo/public_html/toponimo/protected/views/place/index.php on line 134
+[07-May-2012 22:59:45] PHP Fatal error:  Call to a member function enableMarkerClusterer() on a non-object in /home7/toponimo/public_html/toponimo/protected/views/place/index.php on line 134
+[07-May-2012 22:59:52] PHP Fatal error:  Call to a member function enableMarkerClusterer() on a non-object in /home7/toponimo/public_html/toponimo/protected/views/place/index.php on line 134
+[07-May-2012 23:01:01] PHP Fatal error:  Call to a member function enableMarkerClusterer() on a non-object in /home7/toponimo/public_html/toponimo/protected/views/place/index.php on line 142
+[07-May-2012 23:01:40] PHP Fatal error:  Call to a member function enableMarkerClusterer() on a non-object in /home7/toponimo/public_html/toponimo/protected/views/place/index.php on line 142
+[07-May-2012 23:01:43] PHP Fatal error:  Call to a member function enableMarkerClusterer() on a non-object in /home7/toponimo/public_html/toponimo/protected/views/place/index.php on line 142
+[07-May-2012 23:03:34] PHP Fatal error:  Call to a member function enableMarkerClusterer() on a non-object in /home7/toponimo/public_html/toponimo/protected/views/place/index.php on line 142
+[07-May-2012 23:06:32] PHP Fatal error:  Call to undefined method EGMap::setSize() in /home7/toponimo/public_html/toponimo/protected/views/place/index.php on line 115
+[08-May-2012 08:33:05] PHP Fatal error:  Call to a member function setCenter() on a non-object in /home7/toponimo/public_html/toponimo/protected/views/place/index.php on line 118
+[08-May-2012 08:36:11] PHP Fatal error:  Call to undefined method EGmap3Map::setCenter() in /home7/toponimo/public_html/toponimo/protected/views/place/index.php on line 118
+[08-May-2012 08:36:20] PHP Fatal error:  Call to undefined method EGmap3Map::setWidth() in /home7/toponimo/public_html/toponimo/protected/views/place/index.php on line 119
+[08-May-2012 08:41:16] PHP Fatal error:  Call to undefined method EGMap::setZoom() in /home7/toponimo/public_html/toponimo/protected/views/place/index.php on line 118
+[08-May-2012 09:11:21] PHP Fatal error:  Call to undefined method EGmap3Map::renderMap() in /home7/toponimo/public_html/toponimo/protected/views/place/index.php on line 152
+[08-May-2012 14:04:38] PHP Parse error:  syntax error, unexpected $end in /home7/toponimo/public_html/toponimo/protected/views/layouts/main.php on line 88
+[08-May-2012 14:07:59] PHP Parse error:  syntax error, unexpected T_DOUBLE_ARROW in /home7/toponimo/public_html/toponimo/protected/views/layouts/main.php on line 33
+[08-May-2012 14:08:32] PHP Parse error:  syntax error, unexpected T_ARRAY, expecting ')' in /home7/toponimo/public_html/toponimo/protected/views/layouts/main.php on line 45
+[08-May-2012 16:39:42] PHP Fatal error:  Call to undefined method EGMap::centerOnPolygons() in /home7/toponimo/public_html/toponimo/protected/views/place/index.php on line 130
+[08-May-2012 16:45:27] PHP Fatal error:  Call to undefined method EGMap::centerOnPolygons() in /home7/toponimo/public_html/toponimo/protected/views/place/index.php on line 130
+[08-May-2012 16:46:05] PHP Fatal error:  Call to undefined method EGMap::centerOnPolygons() in /home7/toponimo/public_html/toponimo/protected/views/place/index.php on line 130
+[08-May-2012 17:55:29] PHP Fatal error:  Call to a member function toJS() on a non-object in /home7/toponimo/public_html/toponimo/protected/extensions/jquery-gmap/EGmap3Widget.php on line 321
+[08-May-2012 18:18:17] PHP Fatal error:  Call to undefined method EGmap3Marker::latLng() in /home7/toponimo/public_html/toponimo/protected/views/place/index.php on line 143
+[08-May-2012 18:40:25] PHP Fatal error:  Call to a member function add() on a non-object in /home7/toponimo/public_html/toponimo/protected/views/place/index.php on line 146
+[08-May-2012 18:40:39] PHP Fatal error:  Call to a member function add() on a non-object in /home7/toponimo/public_html/toponimo/protected/views/place/index.php on line 146
+[10-May-2012 13:38:17] PHP Fatal error:  Call to undefined method stdClass::validate() in /home7/toponimo/public_html/toponimo/protected/controllers/AuthController.php on line 24
+[10-May-2012 17:25:59] PHP Warning:  Invalid argument supplied for foreach() in /home7/toponimo/public_html/toponimo/protected/views/system/exception.php on line 227
+[10-May-2012 17:26:01] PHP Warning:  Invalid argument supplied for foreach() in /home7/toponimo/public_html/toponimo/protected/views/system/exception.php on line 227
+[10-May-2012 19:08:30] PHP Warning:  Invalid argument supplied for foreach() in /home7/toponimo/public_html/toponimo/protected/views/system/exception.php on line 227
+[29-May-2012 16:18:37] PHP Fatal error:  Uncaught exception 'CException' with message 'Alias "application.components.FirePHPCore.fb" is invalid. Make sure it points to an existing directory or file.' in /home7/toponimo/yii/framework/YiiBase.php:346
+Stack trace:
+#0 /home7/toponimo/public_html/toponimo/index.php(14): YiiBase::import('application.com...', true)
+#1 {main}
+  thrown in /home7/toponimo/yii/framework/YiiBase.php on line 346
+[03-Jun-2012 20:42:48] PHP Fatal error:  Uncaught exception 'CException' with message 'Alias "application.components.FirePHPCore.fb" is invalid. Make sure it points to an existing directory or file.' in /home7/toponimo/yii/framework/YiiBase.php:346
+Stack trace:
+#0 /home7/toponimo/public_html/toponimo/index.php(14): YiiBase::import('application.com...', true)
+#1 {main}
+  thrown in /home7/toponimo/yii/framework/YiiBase.php on line 346
+[04-Jun-2012 04:25:15] PHP Fatal error:  Uncaught exception 'CException' with message 'Alias "application.components.FirePHPCore.fb" is invalid. Make sure it points to an existing directory or file.' in /home7/toponimo/yii/framework/YiiBase.php:346
+Stack trace:
+#0 /home7/toponimo/public_html/toponimo/index.php(14): YiiBase::import('application.com...', true)
+#1 {main}
+  thrown in /home7/toponimo/yii/framework/YiiBase.php on line 346
+[04-Jun-2012 23:25:24] PHP Fatal error:  Uncaught exception 'CException' with message 'Alias "application.components.FirePHPCore.fb" is invalid. Make sure it points to an existing directory or file.' in /home7/toponimo/yii/framework/YiiBase.php:346
+Stack trace:
+#0 /home7/toponimo/public_html/toponimo/index.php(14): YiiBase::import('application.com...', true)
+#1 {main}
+  thrown in /home7/toponimo/yii/framework/YiiBase.php on line 346
+[05-Jun-2012 06:54:08] PHP Fatal error:  Uncaught exception 'CException' with message 'Alias "application.components.FirePHPCore.fb" is invalid. Make sure it points to an existing directory or file.' in /home7/toponimo/yii/framework/YiiBase.php:346
+Stack trace:
+#0 /home7/toponimo/public_html/toponimo/index.php(14): YiiBase::import('application.com...', true)
+#1 {main}
+  thrown in /home7/toponimo/yii/framework/YiiBase.php on line 346
+[05-Jun-2012 19:27:48] PHP Fatal error:  Uncaught exception 'CException' with message 'Alias "application.components.FirePHPCore.fb" is invalid. Make sure it points to an existing directory or file.' in /home7/toponimo/yii/framework/YiiBase.php:346
+Stack trace:
+#0 /home7/toponimo/public_html/toponimo/index.php(14): YiiBase::import('application.com...', true)
+#1 {main}
+  thrown in /home7/toponimo/yii/framework/YiiBase.php on line 346
+[05-Jun-2012 19:27:57] PHP Fatal error:  Uncaught exception 'CException' with message 'Alias "application.components.FirePHPCore.fb" is invalid. Make sure it points to an existing directory or file.' in /home7/toponimo/yii/framework/YiiBase.php:346
+Stack trace:
+#0 /home7/toponimo/public_html/toponimo/index.php(14): YiiBase::import('application.com...', true)
+#1 {main}
+  thrown in /home7/toponimo/yii/framework/YiiBase.php on line 346
+[05-Jun-2012 19:28:11] PHP Fatal error:  Uncaught exception 'CException' with message 'Alias "application.components.FirePHPCore.fb" is invalid. Make sure it points to an existing directory or file.' in /home7/toponimo/yii/framework/YiiBase.php:346
+Stack trace:
+#0 /home7/toponimo/public_html/toponimo/index.php(14): YiiBase::import('application.com...', true)
+#1 {main}
+  thrown in /home7/toponimo/yii/framework/YiiBase.php on line 346
+[05-Jun-2012 19:28:13] PHP Fatal error:  Uncaught exception 'CException' with message 'Alias "application.components.FirePHPCore.fb" is invalid. Make sure it points to an existing directory or file.' in /home7/toponimo/yii/framework/YiiBase.php:346
+Stack trace:
+#0 /home7/toponimo/public_html/toponimo/index.php(14): YiiBase::import('application.com...', true)
+#1 {main}
+  thrown in /home7/toponimo/yii/framework/YiiBase.php on line 346
+[05-Jun-2012 19:28:16] PHP Fatal error:  Uncaught exception 'CException' with message 'Alias "application.components.FirePHPCore.fb" is invalid. Make sure it points to an existing directory or file.' in /home7/toponimo/yii/framework/YiiBase.php:346
+Stack trace:
+#0 /home7/toponimo/public_html/toponimo/index.php(14): YiiBase::import('application.com...', true)
+#1 {main}
+  thrown in /home7/toponimo/yii/framework/YiiBase.php on line 346
+[05-Jun-2012 19:34:21] PHP Fatal error:  Uncaught exception 'CException' with message 'Alias "application.components.FirePHPCore.fb" is invalid. Make sure it points to an existing directory or file.' in /home7/toponimo/yii/framework/YiiBase.php:346
+Stack trace:
+#0 /home7/toponimo/public_html/toponimo/index.php(14): YiiBase::import('application.com...', true)
+#1 {main}
+  thrown in /home7/toponimo/yii/framework/YiiBase.php on line 346
+[05-Jun-2012 19:34:24] PHP Fatal error:  Uncaught exception 'CException' with message 'Alias "application.components.FirePHPCore.fb" is invalid. Make sure it points to an existing directory or file.' in /home7/toponimo/yii/framework/YiiBase.php:346
+Stack trace:
+#0 /home7/toponimo/public_html/toponimo/index.php(14): YiiBase::import('application.com...', true)
+#1 {main}
+  thrown in /home7/toponimo/yii/framework/YiiBase.php on line 346
+[05-Jun-2012 19:34:41] PHP Fatal error:  Uncaught exception 'CException' with message 'Alias "application.components.FirePHPCore.fb" is invalid. Make sure it points to an existing directory or file.' in /home7/toponimo/yii/framework/YiiBase.php:346
+Stack trace:
+#0 /home7/toponimo/public_html/toponimo/index.php(14): YiiBase::import('application.com...', true)
+#1 {main}
+  thrown in /home7/toponimo/yii/framework/YiiBase.php on line 346
+[05-Jun-2012 19:37:43] PHP Fatal error:  Uncaught exception 'CException' with message 'Alias "application.components.FirePHPCore.fb" is invalid. Make sure it points to an existing directory or file.' in /home7/toponimo/yii/framework/YiiBase.php:346
+Stack trace:
+#0 /home7/toponimo/public_html/toponimo/index.php(14): YiiBase::import('application.com...', true)
+#1 {main}
+  thrown in /home7/toponimo/yii/framework/YiiBase.php on line 346
+[05-Jun-2012 19:37:45] PHP Fatal error:  Uncaught exception 'CException' with message 'Alias "application.components.FirePHPCore.fb" is invalid. Make sure it points to an existing directory or file.' in /home7/toponimo/yii/framework/YiiBase.php:346
+Stack trace:
+#0 /home7/toponimo/public_html/toponimo/index.php(14): YiiBase::import('application.com...', true)
+#1 {main}
+  thrown in /home7/toponimo/yii/framework/YiiBase.php on line 346
+[05-Jun-2012 19:37:50] PHP Fatal error:  Uncaught exception 'CException' with message 'Alias "application.components.FirePHPCore.fb" is invalid. Make sure it points to an existing directory or file.' in /home7/toponimo/yii/framework/YiiBase.php:346
+Stack trace:
+#0 /home7/toponimo/public_html/toponimo/index.php(14): YiiBase::import('application.com...', true)
+#1 {main}
+  thrown in /home7/toponimo/yii/framework/YiiBase.php on line 346

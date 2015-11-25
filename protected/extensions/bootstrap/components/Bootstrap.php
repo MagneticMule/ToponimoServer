@@ -36,7 +36,7 @@ class Bootstrap extends CApplicationComponent
 	 * @var boolean whether to register the Bootstrap responsive CSS (bootstrap-responsive.min.css).
 	 * Defaults to false.
 	 */
-	public $responsiveCss = true;
+	public $responsiveCss = false;
 	/**
 	 * @var boolean whether to register the Yii-specific CSS missing from Bootstrap.
 	 * @since 0.9.12

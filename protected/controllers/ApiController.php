@@ -1,14 +1,24 @@
 <?php
 
+/**
+ * API for Toponimo:
+ * @category   Api
+ * @package    Toponimo
+ * @author     Original Author <skywriter@gmail.com>
+ * @copyright  2011 Thomas Sweeney"
+ * @version    0.1.1
+ */
 class ApiController extends Controller {
-    /* get all models */
 
+    /** get all models */
     public function actionList() {
         $results = array();
+        // default to null
+        $models = array();
         switch ($_GET['model']) {
             case 'contextualize':
                 if (!isset($_GET['word']) || (!isset($_GET['placetypes']))) {
-                    $this->sendResponse(500, sprintf('Bad id name: %s', $_GET['word'] . " " . $_GET['placetypes']));
+                    $this->_sendResponse(500, sprintf('Bad id name: %s', $_GET['word'] . " " . $_GET['placetypes']));
                 }
 
                 $score = array();
@@ -20,15 +30,14 @@ class ApiController extends Controller {
                 break;
             case 'words':
                 if (!isset($_GET['pid'])) {
-                    $this->sendResponse(500, sprintf('Bad id name: %s', $_GET['pid']));
+                    $this->_sendResponse(500, "No Id name");
                 }
 
                 $pid = $_GET['pid'];
 
                 // add keys/values from the user word table
-                $wordModel = Word::model();
-                $userWords = $wordModel->getRawWords($pid);
-                $words[userwords] = $userWords;
+                $userWords = Word::model()->getRawWords($pid);
+                $words['userwords'] = $userWords;
 
                 // get place types
                 // instantiate the Placetype & WordEnglish models
@@ -50,54 +59,107 @@ class ApiController extends Controller {
                     $dictionary = array_merge($dictionary, $dictionaryWords);
                 }
                 // add list of predefined words to the array
-                $words[dictionarywords] = $dictionary;
+                $words['dictionarywords'] = $dictionary;
                 $results = array_merge($words, $results);
                 $models = $results;
                 break;
 
             case 'images':
-                $models = Image::model()->findAll();
-                break;
-
-            case 'wordnetwords':
                 if (!isset($_GET['word'])) {
-                    $this->sendResponse(500, sprintf('Bad word name: %s', $_GET['word']));
+                    $this->_sendResponse(500, sprintf('Bad word name'));
                 }
-
-                $word = $_GET['word'];
-                $wordno = WordnetWord::model()->getRawWordNumber($word);
-                $synsetno = array();
-                $synsetno = WordnetSense::model()->getRawSynsetNo($wordno);
-                $result = array();
-
-                foreach ($synsetno as $s) {
-                    $result[] = WordnetSynset::model()->getRawDefinition($s);
-                }
-
-                $models[synset] = array_reverse($result);
-
-                function cmp($a, $b) {
-                    if ($a[lexno] == $b[lexno])
-                        return 0;
-                    return ($a[lexno] < $b[lexno]) ? -1 : 1;
-                }
-
-                // usort($models, cmp);
-
-                $atonymQuery = Yii::app()->db->createCommand()
-                        ->select('w.lemma')->from('toponimo_wordnet.word as w')
-                        ->join('toponimo_wordnet.sense sense', 'sense.wordno = w.wordno')
-                        ->join('toponimo_wordnet.synset syn', 'syn.synsetno = sense.synsetno')
-                        ->join('toponimo_wordnet.semrel semrel', 'semrel.synsetno1 = syn.synsetno')
-                        ->where('w.lemma =:id', array(':id' => $word))
+                $images = Yii::app()->db->createCommand()
+                        ->select('i.name, i.filepath, i.placeid, i.word, i.wordid, i.ownerid')
+                        ->from('image as i')
+                        ->where('i.word like :word', array(':word' => $_GET['word']))
                         ->queryAll();
-                
+                $result = array();
+                foreach ($images as $i) {
+                    $result[] = $i;
+                }
 
+                $models['image'] = $result;
 
-
-                $models[total] = sizeof($models[synset]);
                 break;
 
+            case 'define':
+                if (!isset($_GET['word'])) {
+                    $this->_sendResponse(500, sprintf('Bad word name'));
+                }
+
+                if (!isset($_GET['dict'])) {
+                    $this->_sendResponse(500, sprintf('Bad dictionary type'));
+                }
+
+                //Yii::import('ext.stemmer.PorterStemmer', true);
+
+                //$stem = PorterStemmer::Stem($_GET['word']);
+                $word = $_GET['word'];
+
+                if ($_GET['dict'] == 'wordnet') {
+
+                    $wordno = WordnetWord::model()->getRawWordNumber($word);
+                    $synsetno = array();
+                    $synsetno = WordnetSense::model()->getRawSynsetNo($wordno);
+                    $result = array();
+
+                    foreach ($synsetno as $s) {
+                        $result[] = WordnetSynset::model()->getRawDefinition($s);
+                    }
+
+                    $models['synset'] = array_reverse($result);
+
+                    function cmp($a, $b) {
+                        if ($a['lexno'] == $b['lexno'])
+                            return 0;
+                        return ($a['lexno'] < $b['lexno']) ? -1 : 1;
+                    }
+
+                    // usort($models, cmp);
+
+                    $atonymQuery = Yii::app()->db->createCommand()
+                            ->select('w.lemma')->from('toponimo_wordnet.word as w')
+                            ->join('toponimo_wordnet.sense sense', 'sense.wordno = w.wordno')
+                            ->join('toponimo_wordnet.synset syn', 'syn.synsetno = sense.synsetno')
+                            ->join('toponimo_wordnet.semrel semrel', 'semrel.synsetno1 = syn.synsetno')
+                            ->where('w.lemma =:id', array(':id' => $word))
+                            ->queryAll();
+
+                    $models['total'] = sizeof($models['synset']);
+
+
+
+                    break;
+                }
+
+                $result = null;
+
+                if ($_GET['dict'] == 'webster') { // use the merrium webster dictionary 
+                    
+                    
+                    
+                    $headWord = $this->getHeadword($word);
+                    
+                    
+                    foreach ($headWord as $w) {
+                        $w['definitions'] = Yii::app()->db->createCommand()
+                                ->select('d.definition')
+                                ->from('learner_definitions as d')
+                                ->where('d.word_id =:id', array(':id' => $w['_id']))
+                                ->queryAll();
+                        $result[] = $w;
+                    }
+
+
+
+
+                    $models = array('words' => $result);
+
+                    $result == null ? $models['total_words'] = 0 : $models['total_words'] = (sizeof($models['words']));
+                }
+
+
+                break;
             case 'places':
 
                 // get list of places and associated data
@@ -107,25 +169,25 @@ class ApiController extends Controller {
                         ->queryAll();
 
                 // construct the results array which will include the place name, type, id, types, 
-                // user contributded words and dictionary (pre-defined) words.
+                // user contributed words and dictionary (pre-defined) words.
                 foreach ($models as $model) {
 
                     // add keys/values from the place table
-                    $place[name] = $model[name];
-                    $place[latitude] = $model[latitude];
-                    $place[longitude] = $model[longitude];
-                    $place[placeid] = $model[placeid];
-                    $place[vicinity] = $model[vicinity];
+                    $place['name'] = $model['name'];
+                    $place['latitude'] = $model['latitude'];
+                    $place['longitude'] = $model['longitude'];
+                    $place['placeid'] = $model['placeid'];
+                    $place['vicinity'] = $model['vicinity'];
 
                     // add keys/values from the types table
                     $typeModel = Type::model();
-                    $types = $typeModel->getArrayPlaceTypes($model[placeid]);
-                    $place[type] = $types;
+                    $types = $typeModel->getArrayPlaceTypes($model['placeid']);
+                    $place['type'] = $types;
 
 
                     // instantiate the Placetype & WordEnglish models
                     $placeTypeModel = Placetype::model();
-                    $wordEnglishModel = Wordenglish::model();
+                    // $wordEnglishModel = Wordenglish::model();
 
 
                     $dictionary = array();
@@ -141,25 +203,30 @@ class ApiController extends Controller {
                         $dictionary[$type] = $dictionaryWords;
                     }
                     // add list of predefined words to the array
-                    $place[dictionaryword] = $dictionary;
+                    $place['dictionaryword'] = $dictionary;
                     $results[] = $place;
                     $models = $results;
                 }
                 break;
             default:
-                $this->sendResponse(501, sprintf(
-                                'Bad view name: %s', $_GET['model']));
+                $this->_sendResponse(
+                        501, sprintf(
+                                'Bad view name: %s', $_GET['model']
+                        )
+                );
                 exit;
         }
 
         if (!is_null($models)) {
-            $rows = array();
-            foreach ($models as $model) {
-                $rows[] = $model->attributes;
-            }
-            $this->sendResponse(200, CJSON::encode($models), 'application/json');
+
+            // WTF is this code?
+            //$rows = array();
+            //foreach ($models as $model) {
+            //    $rows[] = $model->attributes;
+            //}
+            $this->_sendResponse(200, CJSON::encode($models), 'application/json');
         } else {
-            $this->sendResponse(501, sprintf('Bad model name: %s', $_GET['model']));
+            $this->_sendResponse(501, sprintf('Bad model name.'));
         }
     }
 
@@ -167,7 +234,7 @@ class ApiController extends Controller {
 
     public function actionView() {
         if (!isset($_GET['id'])) {
-            $this->sendResponse(500, sprintf('Bad id name: %s', $_GET['id']));
+            $this->_sendResponse(500, sprintf('Bad id name: %s', $_GET['id']));
         }
 
         switch ($_GET['model']) {
@@ -181,14 +248,14 @@ class ApiController extends Controller {
                 $model = Image::model()->findByPk($_GET['id']);
                 break;
             default:
-                $this->sendResponse(501, sprintf('Bad view name for model %s', $_GET['model']));
+                $this->_sendResponse(501, sprintf('Bad view name for model %s', $_GET['model']));
                 exit;
         }
 
-        if (is_null($model)) {
-            $this->sendResponse(404, 'No Item found with id ' . $_GET['id']);
+        if (!is_null($model)) {
+            $this->_sendResponse(200, CJSON::encode($model), 'application/json');
         } else {
-            $this->sendResponse(200, CJSON::encode($model), 'application/json');
+            $this->_sendResponse(404, 'No Item found');
         }
     }
 
@@ -203,8 +270,15 @@ class ApiController extends Controller {
 
                 // if the 'postobject' variable isn't set get out of here
                 if (!isset($_POST['postobject'])) {
-                    $this->sendResponse(400, 'Error "postobject" not found in POST body');
-                } //else           
+                    $this->_sendResponse(400, 'Error "postobject" not found in POST body');
+                } //else  
+                // grab the size if a valid image else returns 0
+                $usrImageSize = getimagesize($_FILES['userimage']);
+                // if we dont have a valid image then get out of here
+                if (!$usrImageSize) {
+                    $this->_sendResponse(400, 'Error "postobject" is not a valid image');
+                }
+                // else, lets go ahead and grab the details of the image
                 // the image section of the query
                 $usrImage = $_FILES['userimage'];
 
@@ -218,19 +292,18 @@ class ApiController extends Controller {
                 $usrWord = $_POST['postobject']['word'];
 
                 // word id
+                $usrWordId = $_POST['postobject']['wordid'];
+
+                // word id
                 $usrWordNo = $_POST['postobject']['wordno'];
 
                 // sense no
-                $usrWordSynsetNo = $_POST['postobject']['synsetno'];
-
+                // $usrWordSynsetNo = $_POST['postobject']['synsetno'];
                 // where the image was uploaded
                 $usrImageTemp = $_FILES['userimage']['tmp_name'];
 
                 // the original image filename
                 $usrImageName = $_FILES['userimage']['name'];
-
-                // the size of the image
-                $usrImageSize = $_FILES['userimage']['size'];
 
                 // the mime type of the image
                 $usrImageMime = $_FILES['userimage']['type'];
@@ -243,54 +316,52 @@ class ApiController extends Controller {
 
                 // www based save access path
                 $webPath = 'www.toponimo.org/wordimagestore/';
-
                 if (!empty($usrImage)) {
                     if ($usrImageError > 0) {
                         switch ($usrImageError) {
-                            case 1: $this->sendResponse(404, 'File exceeded upload max file size.');
-                            case 2: $this->sendResponse(404, 'File exceeded max file size.');
-                            case 3: $this->sendResponse(400, 'File only partially uploaded.');
-                            case 4: $this->sendResponse(404, 'No file to upload.');
+                            case 1: $this->_sendResponse(404, 'File exceeded upload max file size.');
+                            case 2: $this->_sendResponse(404, 'File exceeded max file size.');
+                            case 3: $this->_sendResponse(400, 'File only partially uploaded.');
+                            case 4: $this->_sendResponse(404, 'No file to upload.');
                                 break;
                         }
                         exit;
                     }
                 }
 
-
-                if (!file_exists($imageSavePath . $usrPlaceId)) {
-                    mkdir($imageSavePath . $usrPlaceId);
+                if (!file_exists($imageSavePath . $usrWordId)) {
+                    mkdir($imageSavePath . $usrWordId);
                 }
 
-                $imageName = md5(uniqid($usrPlaceId . $ownerId), false) . '.jpg';
+                $imageName = md5(uniqid($usrWordId . $ownerId), false) . '.jpg';
 
                 $uploadedImage = $imageSavePath
-                        . $usrPlaceId
+                        . $usrWordId
                         . '/'
                         . $imageName;
 
                 // check if the file was successfuly uploaded
                 if (is_uploaded_file($usrImageTemp)) {
                     if (!move_uploaded_file($usrImageTemp, $uploadedImage)) {
-                        $this->sendResponse(501, sprintf('Could not move file %s to target location', $uploadedImage));
+                        $this->_sendResponse(501, sprintf('Could not move file %s to target location', $uploadedImage));
                         exit;
                     } else { //success
-                        $_POST['postobject']['filepath'] = $webPath . $usrPlaceId . '/';
+                        $_POST['postobject']['filepath'] = $webPath . $usrWordId . '/';
                         $_POST['postobject']['name'] = $imageName;
                         // create thumbnails
                         $imageTemp = imagecreatefromjpeg($uploadedImage);
-                        
+
                         $model = new Image;
-                        $this->sendResponse(200, $imageName);
+                        //$this->_sendResponse(200, $imageName);
                     }
                 } else {
-                    $this->sendResponse(401, sprintf('Possible upload file attack: %s', $usrImageName));
+                    $this->_sendResponse(401, sprintf('Possible upload file attack: %s', $usrImageName));
                     exit;
                 }
                 break;
 
             default:
-                $this->sendResponse(501, sprintf('Action "create" not implemented for %s', $_GET['model']));
+                $this->_sendResponse(501, sprintf('Action "create" not implemented for %s', $_GET['model']));
                 exit;
         }
 
@@ -301,14 +372,14 @@ class ApiController extends Controller {
                 if ($model->hasAttribute($key)) {
                     $model->$key = $val;
                 } else {
-                    $this->sendResponse(500, sprintf('Value %s:%s does not exist in %s', $key, $val, $_GET['model']));
+                    $this->_sendResponse(500, sprintf('Value %s:%s does not exist in %s', $key, $val, $_GET['model']));
                 }
             }
         }
 
 
         if ($model->save()) { //success
-            $this->sendResponse(200, 'Successfuly added');
+            $this->_sendResponse(200, 'Successfuly added');
         } else { //prepare error message
             $errorMessage = sprintf('Unable to create model %s', $_GET['model']);
             $errorMessage .= "<ul>";
@@ -322,7 +393,7 @@ class ApiController extends Controller {
                 $errorMessage .= "</ul>";
             }
             $errorMessage .="</ul>";
-            $this->sendResponse(500, $errorMessage);
+            $this->_sendResponse(500, $errorMessage);
         }
     }
 
@@ -334,12 +405,12 @@ class ApiController extends Controller {
                 $model = Word::model()->findByPk($_GET['id']);
                 break;
             default:
-                $this->sendResponse(501, sprintf('Update is not implemented for model %s', $_GET['model']));
+                $this->_sendResponse(501, sprintf('Update is not implemented for model %s', $_GET['model']));
                 exit;
         }
 
         if (is_null($model)) {
-            $this->sendReponse(400, sprintf('Model %s not implemented for id %s', $_GET['model'], $_GET['id']));
+            $this->_sendReponse(400, sprintf('Model %s not implemented for id %s', $_GET['model'], $_GET['id']));
         }
 
         /* Assign PUT parameters to attributes */
@@ -347,11 +418,11 @@ class ApiController extends Controller {
             if ($model->hasAttribute($key)) {
                 $model->$key = $val;
             } else {
-                $this->sendResponse(500, sprintf('%s is not allowed for model %s', $var, $_GET['model']));
+                $this->_sendResponse(500, sprintf('%s is not allowed for model %s', $var, $_GET['model']));
             }
         }
         if ($model->save()) { //success
-            $this->sendResponse(200, sprintf('%s in model %s has been updated', $_GET['id'], $_GET['model']));
+            $this->_sendResponse(200, sprintf('%s in model %s has been updated', $_GET['id'], $_GET['model']));
         } else { //prepare error message
             $errorMessage = sprintf('Unable to update model %s', $_GET['model']);
             $errorMessage .= "<ul>";
@@ -365,7 +436,7 @@ class ApiController extends Controller {
                 $errorMessage .= "</ul>";
             }
             $errorMessage .="</ul>";
-            $this->sendResponse(500, $errorMessage);
+            $this->_sendResponse(500, $errorMessage);
         }
     }
 
@@ -375,18 +446,18 @@ class ApiController extends Controller {
                 $model = Word::model()->findByPk($_GET['id']);
                 break;
             default:
-                $this->sendResponse(501, sprintf('Action delete is not implemented for model %s'), $_GET['model']);
+                $this->_sendResponse(501, sprintf('Action delete is not implemented for model %s'), $_GET['model']);
                 exit;
         }
 
         if (is_null($model)) {
-            $this->sendResponse(400, sprintf('No model %s with id %s', $_GET['model'], $_GET['id']));
+            $this->_sendResponse(400, sprintf('No model %s with id %s', $_GET['model'], $_GET['id']));
         }
         $message = $model->delete();
         if ($message > 0) { //model has been deleted
-            $this->sendResponse(200, sprintf('Model %s with id %s has been deleted', $_GET['model'], $_GET['id']));
+            $this->_sendResponse(200, sprintf('Model %s with id %s has been deleted', $_GET['model'], $_GET['id']));
         } else { //fail 
-            $this->sendResponse(500, sprintf('Cannot delete model %s with id %s', $_GET['model'], $_GET['id']));
+            $this->_sendResponse(500, sprintf('Cannot delete model %s with id %s', $_GET['model'], $_GET['id']));
         }
     }
 
@@ -405,14 +476,14 @@ class ApiController extends Controller {
         }
     }
 
-    private function checkAuth() {
+    private function _checkAuth() {
         $user = Yii::app()->getModule('user')->$id;
     }
 
-    private function sendResponse($status = 200, $body = '', $contentType = 'application/json') {
+    private function _sendResponse($status = 200, $body = '', $contentType = 'application/json') {
         $status_header = 'HTTP/1.1 ' . $status . ' ' . $this->_getStatusCodeMessage($status);
         header($status_header);
-        header('Content-type: ' . $content_type);
+        header('Content-type: ' . $contentType);
 
         if ($body != '') {
             echo $body;
@@ -434,211 +505,12 @@ class ApiController extends Controller {
         return (isset($codes[$status])) ? $codes[$status] : '';
     }
 
-    private function lesk($word, $placetype) {
+    private function _lesk($word, $placetype) {
 
         /*
          *  Stopwords from http://www.d.umn.edu/~tpederse/Group01/WordNet/wordnet-stoplist.html
          */
-        $stopWords = array(
-            "I",
-            "a",
-            "an",
-            "as",
-            "at",
-            "by",
-            "he",
-            "his",
-            "me",
-            "or",
-            "thou",
-            "us",
-            "who",
-            "against",
-            "amid",
-            "amidst",
-            "among",
-            "amongst",
-            "and",
-            "anybody",
-            "anyone",
-            "because",
-            "beside",
-            "circa",
-            "despite",
-            "during",
-            "everybody",
-            "everyone",
-            "for",
-            "from",
-            "her",
-            "hers",
-            "herself",
-            "him",
-            "himself",
-            "hisself",
-            "idem",
-            "if",
-            "into",
-            "it",
-            "its",
-            "itself",
-            "myself",
-            "nor",
-            "of",
-            "oneself",
-            "onto",
-            "our",
-            "ourself",
-            "ourselves",
-            "per",
-            "she",
-            "since",
-            "than",
-            "that",
-            "the",
-            "thee",
-            "theirs",
-            "them",
-            "themselves",
-            "they",
-            "thine",
-            "this",
-            "thyself",
-            "to",
-            "tother",
-            "toward",
-            "towards",
-            "unless",
-            "until",
-            "upon",
-            "versus",
-            "via",
-            "we",
-            "what",
-            "whatall",
-            "whereas",
-            "which",
-            "whichever",
-            "whichsoever",
-            "whoever",
-            "whom",
-            "whomever",
-            "whomso",
-            "whomsoever",
-            "whose",
-            "whosoever",
-            "with",
-            "without",
-            "ye",
-            "you",
-            "you-all",
-            "yours",
-            "yourself",
-            "yourselves",
-            "aboard",
-            "about",
-            "above",
-            "across",
-            "after",
-            "all",
-            "along",
-            "alongside",
-            "although",
-            "another",
-            "anti",
-            "any",
-            "anything",
-            "around",
-            "astride",
-            "aught",
-            "bar",
-            "barring",
-            "before",
-            "behind",
-            "below",
-            "beneath",
-            "besides",
-            "between",
-            "beyond",
-            "both",
-            "but",
-            "concerning",
-            "considering",
-            "down",
-            "each",
-            "either",
-            "enough",
-            "except",
-            "excepting",
-            "excluding",
-            "few",
-            "fewer",
-            "following",
-            "ilk",
-            "in",
-            "including",
-            "inside",
-            "like",
-            "many",
-            "mine",
-            "minus",
-            "more",
-            "most",
-            "naught",
-            "near",
-            "neither",
-            "nobody",
-            "none",
-            "nothing",
-            "notwithstanding",
-            "off",
-            "on",
-            "opposite",
-            "other",
-            "otherwise",
-            "outside",
-            "over",
-            "own",
-            "past",
-            "pending",
-            "plus",
-            "regarding",
-            "round",
-            "save",
-            "self",
-            "several",
-            "so",
-            "some",
-            "somebody",
-            "someone",
-            "something",
-            "somewhat",
-            "such",
-            "suchlike",
-            "sundry",
-            "there",
-            "though",
-            "through",
-            "throughout",
-            "till",
-            "twain",
-            "under",
-            "underneath",
-            "unlike",
-            "up",
-            "various",
-            "vis-a-vis",
-            "whatever",
-            "whatsoever",
-            "when",
-            "wherewith",
-            "wherewithal",
-            "while",
-            "within",
-            "worth",
-            "yet",
-            "yon",
-            "yonder");
+
 
         $bestDefinition = 0;
 
@@ -648,10 +520,20 @@ class ApiController extends Controller {
         $definitions = array();
 
         foreach ($synsetno as $s) {
-            $defintions[synset][] = WordnetSynset::model()->getRawDefinition($s);
+            $defintions['synset'][] = WordnetSynset::model()->getRawDefinition($s);
         }
 
-        $cleanedDefinitions = str_replace($stopWords, "", $definitions[synset]);
+        $cleanedDefinitions = str_replace($stopWords, "", $definitions['synset']);
+    }
+
+    public function getHeadword($word) {
+        $headWord = Yii::app()->db->createCommand()
+                ->select('m._id, m.lemma, m.syllables, m.pronounciation, m.part_of_speach, m.inflected_forms')
+                ->from('learner_words as m')
+                ->where('m.lemma like :id', array(':id' => $word))
+                ->queryAll();
+        
+        return $headWord;
     }
 
 }

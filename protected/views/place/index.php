@@ -1,79 +1,81 @@
-<head>
 
-    <script>  
-        jQuery(window).ready(function(){
-            // attempt to get user location
-            navigator.geolocation.getCurrentPosition(handle_geolocation_query,handle_errors); 
-        });  
+
+<script>  
+        
+    // attempt to get user location
+    navigator.geolocation.getCurrentPosition(handle_geolocation_query,handle_errors); 
+        
  
   
-        function handle_errors(error)  
+    function handle_errors(error)  
+    {  
+        switch(error.code)  
         {  
-            switch(error.code)  
-            {  
-                case error.PERMISSION_DENIED: alert("user did not share geolocation data");  
-                    break;  
+            case error.PERMISSION_DENIED: alert("user did not share geolocation data");  
+                break;  
   
-                case error.POSITION_UNAVAILABLE: alert("could not detect current position");  
-                    break;  
+            case error.POSITION_UNAVAILABLE: alert("could not detect current position");  
+                break;  
   
-                case error.TIMEOUT: alert("retrieving location timed out");  
-                    break;  
+            case error.TIMEOUT: alert("retrieving location timed out");  
+                break;  
   
-                default: alert("unknown error retreiving location");  
-                    break;  
-            }  
+            default: alert("unknown error retreiving location");  
+                break;  
         }  
+    }  
         
-        /*
-         * Update map with users current location.
-         */
-        function handle_geolocation_query(position){  
-            // construct new latlng variable from the passed lat and lng cordinates
-            var latlng = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+    /*
+     * Update map with users current location.
+     */
+    function handle_geolocation_query(position){  
+        // construct new latlng variable from the passed lat and lng cordinates
+        //    var latlng = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
            
-            // get reference to google map
-            var googleMap = $('#userMap').gmap3({action:'get', name:'map'});
+        // get reference to google map
+        //  var googleMap = $('#userMap').gmap3({action:'get', name:'map'});
            
-            // center google map on the users current lat/lng cordinates
-            googleMap.setCenter(latlng);
+        // center google map on the users current lat/lng cordinates
+        //  googleMap.setCenter(latlng);
                
-            // construct and add new marker representing the users current position   
-            var marker = new google.maps.Marker({               
-                position:latlng,
-                title:"You are here!",
-                options:{
-                    animation: google.maps.Animation.DROP
-                },
-                map: googleMap
-            });
+        // construct and add new marker representing the users current position   
+        /*     var marker = new google.maps.Marker({               
+            position:latlng,
+            title:"You are here!",
+            options:{
+                animation: google.maps.Animation.DROP
+            },
+            map: googleMap
+        });
+            
+         */
              
-            $.get("http://www.toponimo.org/toponimo/place/index", {"lat": position.coords.latitude, "lng": position.coords.longitude });     
-            $("#placeresults").html();
-            $.fn.yiiListView.update('placeView');
+        $.get("http://www.toponimo.org/toponimo/place/index", {"lat": position.coords.latitude, "lng": position.coords.longitude });     
+        $("#placeresults").html();
+        $.fn.yiiListView.update('placeView');
            
            
-            /*
-            $('#userMap').gmap3({action:'get', name:'map'})({
-                action : 'addMarker',
-                lat: position.coords.latitude,
-                lng: position.coords.longitude,
-                callback: function(marker){
-                        $this.gmap3({
-                            action:'panTo',
-                            args:[marker.position]
-                        });
-             */   
+        /*
+        $('#userMap').gmap3({action:'get', name:'map'})({
+            action : 'addMarker',
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+            callback: function(marker){
+                    $this.gmap3({
+                        action:'panTo',
+                        args:[marker.position]
+                    });
+         */   
            
             
             
-            // var marker = new google.maps.Marker({position: userLatLng, map:map, title: "You are here"});
-            //  $.post("http://www.toponimo.org/toponimo/place/updateAjaxMap", {"lat": position.coords.latitude, "lng": position.coords.longitude });
+        // var marker = new google.maps.Marker({position: userLatLng, map:map, title: "You are here"});
+        //  $.post("http://www.toponimo.org/toponimo/place/updateAjaxMap", {"lat": position.coords.latitude, "lng": position.coords.longitude });
            
-        } 
+    } 
         
-    </script>
-</head>
+</script>
+
 
 
 <?php
@@ -103,9 +105,17 @@ $this->menu = array(
 </form>
 -->
 
+
+
 <div id="mapcontainer">
     <!-- <?php $this->renderPartial('_ajaxMap'); ?> -->
+
+
+
     <?php
+    //TODO Add method in controller to return dataprovider based on user $lat and $lng
+
+
     /**
      * Google Map Setup and Display
      */
@@ -123,13 +133,20 @@ $this->menu = array(
     $zoomOptions->style = EGmap3ZoomControlStyle::SMALL;
     $zoomOptions->position = EGmap3ControlPosition::LEFT_TOP;
     $options->zoomControlOptions = $zoomOptions;
-
-    //$marker = new EGmap3Marker(array('title' => "You are here!"));
-    //$marker->latLng = array($lat, $lng);
-    //center the map on the marker
-    //$marker->centerOnMap();
-    //$gmap->add($marker);
     $gmap->setOptions($options);
+
+    // create array of marker, assigning lat,lng and name to each.
+    $i = 0;
+    foreach ($dataProvider->getData() as $p) {
+        $locs[$i] = new EGmap3Marker();
+        $locs[$i]->latLng = array($p->latitude, $p->longitude);
+        $locs[$i]->title = $p->name;
+        $locs[$i]->clickable = true;
+        $gmap->add($locs[$i]);
+        $i++;
+    }
+
+    $gmap->autofit = true;
     $gmap->renderMap();
     ?>
 
@@ -148,7 +165,7 @@ $this->menu = array(
 
 <div id="placeresults">
     <?php
-    // $dp = (isset($_GET['lat'] && isset($_GET['lng] ? 
+// $dp = (isset($_GET['lat'] && isset($_GET['lng] ? 
     $this->widget('zii.widgets.CListView', array(
         'dataProvider' => $dataProvider,
         'itemView' => '_view',
@@ -157,7 +174,6 @@ $this->menu = array(
         'summaryText' => ' Page {page} of {pages}',
         'enableSorting' => true,
         'sorterHeader' => 'Order by:',
-
     ));
     ?>
 </div>

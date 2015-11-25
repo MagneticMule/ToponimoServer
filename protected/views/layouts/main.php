@@ -4,7 +4,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="language" content="en" />
 
-
+		<meta name="apple-mobile-web-app-capable" content="yes" />
         <title><?php echo CHtml::encode($this->pageTitle); ?></title>
         <?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
         <!-- blueprint CSS framework -->
@@ -29,26 +29,26 @@
         ));
         
 
-        $this->widget('bootstrap.widgets.BootNavbar', array(
-            
-            'fixed' => 'top',
+        $this->widget('bootstrap.widgets.BootNavbar', array(          
+            'fixed' => 'top',    
             'brand' => '<img src="' . Yii::app()->request->baseUrl . '/images/toponimo_ident_240.png" width="140">',
             'brandUrl' => 'http://www.toponimo.org/toponimo',
             'collapse' => false, // requires bootstrap-responsive.css
             'items' => array(
                 '<form class="navbar-search pull-left">
-                    <input type="search" class="search-query span3" 
+                    <input type="search" class="search-query toponimo-nav-search" 
                     placeholder="Search for places or words..." 
                     name="q" 
                     value="' . (isset($_GET["lat"]) ? CHtml::encode($_GET["lat"]) : "") . '"/>
-                        </form>',
+                        <div class="icon-search"></div>
+                        </form>', 'visible'=>!Yii::app()->user->isGuest,
                 array(
                     'class' => 'bootstrap.widgets.BootMenu',
                     'htmlOptions' => array('class' => 'pull-right'),
                     'items' => array(
-                        array('label' => 'Word Bank','url' => '#', 'icon'=>'icon-bookmark icon-white','visible' => !Yii::app()->user->isGuest),
-                        array('label' => 'Places', 'url' => '#', 'icon'=>'icon-screenshot icon-white','visible' => !Yii::app()->user->isGuest),
-                        array('label' => 'Words', 'url' => '#', 'icon'=>'icon-book icon-white','visible' => !Yii::app()->user->isGuest),
+                        array('label' => 'Word Bank','url' => '#', 'visible' => !Yii::app()->user->isGuest),
+                        array('label' => 'Places', 'url' => '#', 'visible' => !Yii::app()->user->isGuest),
+                        array('label' => 'Words', 'url' => '#', 'visible' => !Yii::app()->user->isGuest),
                         '---',
                         array('label' => 'Login', 'url' => array('/user/auth'), 'visible' => Yii::app()->user->isGuest),
                         array('label' => ucfirst(Yii::app()->user->name), 'visible' => !Yii::app()->user->isGuest, 'items' => array(
@@ -60,6 +60,7 @@
                 ),
             ),
         ));
+
         ?>
 
         <div id="page_title"></div>

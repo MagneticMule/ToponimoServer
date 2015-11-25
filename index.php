@@ -10,7 +10,7 @@ defined('YII_DEBUG') or define('YII_DEBUG',true);
 defined('YII_TRACE_LEVEL') or define('YII_TRACE_LEVEL',3);
 
 require_once($yii);
-//if (YII_DEBUG){
+// if (YII_DEBUG){
 //    Yii::import("application.components.FirePHPCore.fb", true);
 //}
 Yii::createWebApplication($config)->run();

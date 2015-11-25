@@ -138,6 +138,7 @@ class PlaceController extends Controller {
         $this->render('index', array(
             'dataProvider' => $dataProvider,
         ));
+
     }
 
     public function actionUpdateResults($lat,$lng) {

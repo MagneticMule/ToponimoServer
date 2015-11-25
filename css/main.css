@@ -1,7 +1,19 @@
 @charset "utf-8";
 /* toponimo: Main Style */
 
-/* @import url("toponimo_bootstrap.css"); */
+/*
+
+* {
+       -webkit-transition: all .3s ease-in-out;
+               -moz-transition: all .3s ease-in-out;
+                         -o-transition: all .3s ease-in-out;
+                                     transition: all .3s ease-in-out;
+                                    }
+             */
+
+/* @import url("toponimo_bootstrap.css");  */
+
+
 .navbar-inner {
     background-color: #3A4E56;
     background-image: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(58,78,96,1) 1%, rgba(60,52,86,1) 97%, rgba(0,0,0,1) 100%);
@@ -28,21 +40,13 @@ a {
     transition: all .2s ease-in-out;
 }
 
-.container{
-    *zoom:0;
-}
-
-.container-fluid {
-    padding-left: 20px;
-    padding-right: 20px;
-    *zoom: 0;
-}
 
 .navbar .brand {
     float: left;
     display: block;
     padding: 6px 8px 8px;
-    margin-left: -20px;
+    margin-left: 0px;
+    margin-right: 20px;
     font-size: 20px;
     font-weight: 200;
     line-height: 1;
@@ -93,7 +97,7 @@ a {
     -moz-transition: all .5s ease-in-out;
     -o-transition: all .5s ease-in-out;
     transition: all .5s ease-in-out;
-    line-height: 1.7em;
+    line-height: 1.3em;
     height: 19px;
 }
 
@@ -107,10 +111,13 @@ a {
     -moz-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.3), 0 1px 0px rgba(255, 255, 255, 0.40);
     box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.3), 0 1px 0px rgba(255, 255, 255, 0.40);
 
-
 }
 
-.navbar-search .search-query:focus, .navbar-search .search-query.focused {
+.toponimo-nav-search {
+    width:200px;
+}
+
+.toponimo-nav-search:focus, .toponimo-nav-search.focused {
     width:240px;
 
 }
@@ -122,6 +129,25 @@ a {
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
     border-radius: 8px;
+}
+
+.navbar-search .search-query {
+    padding-left: 29px;
+}
+
+.navbar-search .icon-search {
+    position: absolute;
+    top: 7px;
+    left: 11px;
+    background-image: url("http://twitter.github.com/bootstrap/assets/img/glyphicons-halflings-white.png");
+}
+
+.navbar-search .search-query:focus, .navbar-search .search-query.focused {
+    padding-left: 30px;
+}
+
+.search-query:focus + .icon-search {
+    background-image: url("http://twitter.github.com/bootstrap/assets/img/glyphicons-halflings.png");
 }
 
 html {
@@ -652,4 +678,6 @@ custominput:focus {
     border-style: solid;
     border-color: #FBC2C4;
     margin: 0 -20px;
+    width:940px;
+    height:402px;
 }

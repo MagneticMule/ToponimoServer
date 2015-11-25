@@ -8,8 +8,7 @@
  * @property string $filepath
  * @property string $placeid
  * @property string $word
- * @property string $wordno
- * @property string $synsetno
+ * @property string $wordid
  * @property integer $ownerid
  *
  * The followings are the available model relations:
@@ -43,14 +42,14 @@ class Image extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, filepath, placeid, word, wordno, synsetno, ownerid', 'required'),
+			array('name, filepath, placeid, word, wordid, ownerid', 'required'),
 			array('ownerid', 'numerical', 'integerOnly'=>true),
 			array('name, placeid', 'length', 'max'=>60),
 			array('filepath, word', 'length', 'max'=>80),
-			array('wordno, synsetno', 'length', 'max'=>6),
+			array('wordid', 'length', 'max'=>80),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('name, filepath, placeid, word, wordno, synsetno, ownerid', 'safe', 'on'=>'search'),
+			array('name, filepath, placeid, word, wordid, ownerid', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -77,8 +76,7 @@ class Image extends CActiveRecord
 			'filepath' => 'Filepath',
 			'placeid' => 'Placeid',
 			'word' => 'Word',
-			'wordno' => 'Wordno',
-			'synsetno' => 'Synsetno',
+			'wordid' => 'Wordid',
 			'ownerid' => 'Ownerid',
 		);
 	}
@@ -98,9 +96,8 @@ class Image extends CActiveRecord
 		$criteria->compare('filepath',$this->filepath,true);
 		$criteria->compare('placeid',$this->placeid,true);
 		$criteria->compare('word',$this->word,true);
-		$criteria->compare('wordno',$this->wordno,true);
-		$criteria->compare('synsetno',$this->synsetno,true);
-		$criteria->compare('ownerid',$this->ownerid);
+		$criteria->compare('wordid',$this->wordid,true);
+		$criteria->compare('ownerid',$this->ownerid, true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

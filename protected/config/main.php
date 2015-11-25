@@ -4,21 +4,24 @@
 // Yii::setPathOfAlias('local','path/to/local-folder');
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
+Yii::setPathOfAlias('bootstrap', dirname(__FILE__).'/../extensions/bootstrap');
+Yii::setPathOfAlias('stemmer', dirname(__FILE__).'/../extensions/stemmer/PorterStemmer.php');
 return array(
     'basePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..',
     'name' => 'Toponimo',
     'theme' => 'classic',
     // preloading 'log' & 'bootstrap' components
-    'preload' => array('log', 'bootstrap'),
+    'preload' => array('log'),
     // autoloading model and component classes
     'import' => array(
         'application.models.*',
         'application.components.*',
         'application.modules.user.models.*',
         'application.extlibs.*',
-        'application.extensions.firephp.*',
+
     ),
     'modules' => array(
+        'registration' => array(),
         'avatar' => array(),
         'user' => array(
             'debug' => false,
@@ -64,6 +67,12 @@ return array(
     ),
     // application components
     'components' => array(
+        'bootstrap' => array(
+            'class' => 'ext.bootstrap.components.Bootstrap', // assuming you extracted bootstrap under extensions
+        ),
+        'stemmer' => array(
+            'class' => 'ext.stemmer.PorterStemmer'
+            ),
         'clientScript' => array(
             'packages' => array(
                 'jquery' => array(
@@ -73,6 +82,7 @@ return array(
             'class' => 'application.modules.user.components.YumWebUser',
             'allowAutoLogin' => true,
             'loginUrl' => array('//user/user/login'),
+
         ),
         'cache' => array('class' => 'system.caching.CFileCache'),
         'urlManager' => array(
@@ -127,16 +137,9 @@ return array(
             'routes' => array(
                 array(
                     'class' => 'CFileLogRoute',
-                    'levels' => 'error, warning',
+                    'levels' => 'error',
                 ),
-                array(
-                    'class' => 'EFirephp',
-                    'config' => array(
-                        'enabled' => true,
-                        'dateFormat' => 'Y/m/d H:i:s',
-                    ),
-                    'levels' => 'error, warning, trace, profile, info',
-                ),
+                
             // uncomment the following to show log messages on web pages
             /*  array(
               'class'=>'CWebLogRoute',
@@ -148,9 +151,6 @@ return array(
         'params' => array(
             // this is used in contact page
             'adminEmail' => 'toponimo@toponimo.org',
-        ),
-        'bootstrap' => array(
-            'class' => 'ext.bootstrap.components.Bootstrap', // assuming you extracted bootstrap under extensions
         ),
     ),
 );
